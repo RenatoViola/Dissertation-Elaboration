@@ -22,22 +22,50 @@
 
 \glsresetall
 
-\section{Sound Perception}
-\label{sec:sound-perception}
+This chapter presents the foundational concepts necessary to understand the work. It covers the principles of sound transmission and localization, binaural hearing, immersive audio, human-computer interaction and soundscapes. These concepts provide the theoretical grounding for the proposed solution.
 
-\subsection{What Is Sound And How Is It Perceived?}
+\section{Sound - The Fundamentals}
+\label{sec:sound-fundamentals}
+
+\subsection{What Is Sound?}
 \label{ssec:what-is-sound}
 
-% talk about BVI people perceive sounds differently
-\subsection{BVI People Experience Sound Differently}
-\label{ssec:bvi-experience-sound}
+As a physical phenomenon, sound is enabled by the vibration of a body with the properties of both inertia and elasticity (which are attributes of nearly every object, in practice). 
+
+Any type of vibration is capable of producing sound, as long as it meets the requirements for making a body move back and forth. The most simple of vibrations can be characterized by a sinusoid (Figure~\ref{fig:sinusoid}) and is the elementary unit for all possible vibrations. 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{sine_wave}
+  \caption{Sinusoid}
+  \label{fig:sinusoid}
+\end{figure}
+
+Any vibration can be broken down into a composition of sine waves – a Fourier series, each of which can be uniquely identified by its frequency, amplitude and starting phase. Describing a complex vibration by deriving the characteristics of its composing simple vibrations is named a Fourier analysis. 
+
+\subsection{Sound Perception}
+\label{ssec:sound-perception}
+
+Without delving into the anatomical details, the process of hearing starts once a sound wave vibrates our eardrum, and after going through the outer, middle and inner ear, what reaches our auditory nervous system is no longer a mechanical vibration but a nervous impulse, now up to our brain to interpret. 
+
+Perceptually, the changes in amplitude of a sine wave tend to be experienced as loudness while changes in frequency are labeled as pitch~\cite{fundamentals-of-hearing-w-yost}.
 
 
-\section{Binaural Hearing}
-\label{sec:binaural-hearing}
+\subsection{Sound Propagation}
+\label{ssec:sound-propagation}
 
-\subsection{Binaural Audio}
-\label{ssec:binaural-audio}
+For a sound to reach our ears or any other point, it must first travel through a medium with both the properties of elasticity and inertia, as mentioned in section 2.1.1. That is to say that, for example, it can travel trough solids, liquids and gases but not through a vacuum. The speed at which it propagates may vary with the temperature and density of the medium, in air it is around 345 meters per second.
+
+In air, the very presence of its randomly moving molecules originates a static pressure, which when disturbed by the vibrations of a sound source, leads to zones of alternating pressure (Figure~\ref{fig:pressure_zones} illustrates this) – where the molecules cluster more tightly is called an area of condensation, while a significant spread in molecule placement designates an area of rarefaction.
+
+Sound waves propagate in all directions from a source (circularly in 2D, spherically in 3D) and while traveling may come across several forms of interference such as: reflection, absorption, diffraction and refraction. For example, an obstacle with a size similar to that of the sound’s wavelength may produce an area past the object where wave magnitude is greatly reduced or even completely absent – a sound shadow.
+
+In addition, the intensity of a sound decreases quadratically with the distance to its source - the inverse square law.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{pressure_zones}
+  \caption{Pressure zones}
+  \label{fig:pressure_zones}
+\end{figure}
 
 \subsection{Sound Localization}
 \label{ssec:sound-localization}
@@ -45,11 +73,12 @@
 \subsubsection{Interaural Differences}
 \label{sssec:interaural-differences}
 
-\subsubsection{The Confusion Cone}
+\subsubsection{Duplex Theory / The Confusion Cone}
 \label{sssec:confusion-cone}
 
 \subsubsection{Head Related Transfer Function (HRTF)}
 \label{sssec:hrtf}
+
 
 \section{Immmersive Audio}
 \label{sec:immersive-audio}
@@ -63,14 +92,19 @@
 \subsection{Techniques For Rendering 3D Audio}
 \label{ssec:rendering-3d-audio}
 
-\subsubsection{Ambisonics}
-\label{sssec:ambisonics}
+%% Vale a pena falar disto?
+% \subsubsection{Ambisonics}
+% \label{sssec:ambisonics}
 
-\subsubsection{Wave Field Synthesis (WFS)}
-\label{sssec:wfs}
+% \subsubsection{Wave Field Synthesis (WFS)}
+% \label{sssec:wfs}
 
 \section{Human-Computer Interaction}
 \label{sec:hci}
+
+% talk about BVI people perceive sounds differently
+\subsection{BVI People Experience Sound Differently}
+\label{ssec:bvi-experience-sound}
 
 \section{Soundscape}
 \label{sec:soundscape}
