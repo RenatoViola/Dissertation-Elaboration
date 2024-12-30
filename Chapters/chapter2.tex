@@ -40,7 +40,7 @@ Any type of vibration is capable of producing sound, as long as it meets the req
   \label{fig:sinusoid}
 \end{figure}
 
-Any vibration can be broken down into a composition of sine waves – a Fourier series, each of which can be uniquely identified by its frequency, amplitude and starting phase. Describing a complex vibration by deriving the characteristics of its composing simple vibrations is named a Fourier analysis. 
+Any vibration can be broken down into a composition of sine waves – a Fourier series, each of which can be uniquely identified by its frequency, amplitude and starting phase. Describing a complex vibration by deriving the characteristics of its composing simple vibrations is named a Fourier analysis~\cite{fundamentals-of-hearing-w-yost}. 
 
 \subsection{Sound Perception}
 \label{ssec:sound-perception}
@@ -56,10 +56,6 @@ Perceptually, the changes in amplitude of a sine wave tend to be experienced as 
 For a sound to reach our ears or any other point, it must first travel through a medium with both the properties of elasticity and inertia, as mentioned in section 2.1.1. That is to say that, for example, it can travel trough solids, liquids and gases but not through a vacuum. The speed at which it propagates may vary with the temperature and density of the medium, in air it is around 345 meters per second.
 
 In air, the very presence of its randomly moving molecules originates a static pressure, which when disturbed by the vibrations of a sound source, leads to zones of alternating pressure (Figure~\ref{fig:pressure_zones} illustrates this) – where the molecules cluster more tightly is called an area of condensation, while a significant spread in molecule placement designates an area of rarefaction.
-
-Sound waves propagate in all directions from a source (circularly in 2D, spherically in 3D) and while traveling may come across several forms of interference such as: reflection, absorption, diffraction and refraction. For example, an obstacle with a size similar to that of the sound’s wavelength may produce an area past the object where wave magnitude is greatly reduced or even completely absent – a sound shadow.
-
-In addition, the intensity of a sound decreases quadratically with the distance to its source - the inverse square law.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\linewidth]{pressure_zones}
@@ -67,8 +63,31 @@ In addition, the intensity of a sound decreases quadratically with the distance 
   \label{fig:pressure_zones}
 \end{figure}
 
+Sound waves propagate in all directions from a source (circularly in 2D, spherically in 3D) and while traveling may come across several forms of interference such as: reflection, absorption, diffraction and refraction. For example, an obstacle with a size similar to that of the sound’s wavelength may produce an area past the object where wave magnitude is greatly reduced or even completely absent – a sound shadow.
+
+In addition, the intensity of a sound decreases quadratically with the distance to its source - the inverse square law~\cite{fundamentals-of-hearing-w-yost}.
+
 \subsection{Sound Localization}
 \label{ssec:sound-localization}
+
+As sound has no intrinsic spatial dimensions, how we perceive spatial cues is a product of our auditory system’s capability to process the physical properties of sound that correspond to spatial position~\cite{fundamentals-of-hearing-w-yost}. 
+
+There exist three spatial dimensions in which one can localize sound: the horizontal plane commonly referred to as the azimuth, the vertical plane (elevation) and the distance (range)~{\cite{fundamentals-of-hearing-w-yost,risoud2018sound}}. These are properly illustrated in Figure~\ref{fig:polar-sound-localization}.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{polar-sound-localization}
+  \caption{Polar coordinates for sound localization}
+  \label{fig:polar-sound-localization}
+\end{figure}
+
+Most of our spatial perception is heavily reliant on our binaural hearing – our ability to interpret and locate what we hear from both our ears. While monaural cues contribute to spatial hearing, namely for vertical localization and depth perception, the most important mechanisms for perceiving directional sound are binaural cues – used for localization in the horizontal plane, consisting of the interaural differences of time and intensity~\cite{spatial-audio-f-rumsey}. 
+
+Via these differences in signal reception between both ears, time and level are key physical properties that enable sound localization along the azimuthal plane and will be further addressed in section 2.2.2.1.
+
+One other important property is the sound’s spectral shape relevant for vertical localization, and it is impacted by interference phenomena such as reflection, difraction and absorption, caused by a listener’s physical features~\cite{risoud2018sound}. These alterations are captured by what is called a Head Related Transfer Function (HRTF), which we will delve into in section 2.2.2.3. 
+
+Though not as much is known about perceiving the distance of a sound source, it is mostly influenced by the sound’s loudness and early reflections from nearby surfaces~\cite{fundamentals-of-hearing-w-yost}.
+
 
 \subsubsection{Interaural Differences}
 \label{sssec:interaural-differences}
