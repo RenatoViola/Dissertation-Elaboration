@@ -25,11 +25,8 @@
 This chapter presents the foundational concepts necessary to understand the work. It covers the principles of sound transmission and localization, binaural hearing, immersive audio, human-computer interaction and soundscapes. These concepts provide the theoretical grounding for the proposed solution.
 This chapter presents the foundational concepts necessary to understand the work. It covers the principles of sound transmission and localization, binaural hearing, immersive audio, human-computer interaction and soundscapes. These concepts provide the theoretical grounding for the proposed solution.
 
-\section{Sound - The Fundamentals}
-\label{sec:sound-fundamentals}
-
-\subsection{What Is Sound?}
-\label{ssec:what-is-sound}
+\section{The Fundamentals Of Sound}
+\label{sec:what-is-sound}
 
 As a physical phenomenon, sound is enabled by the vibration of a body with the properties of both inertia and elasticity (which are attributes of nearly every object, in practice). 
 
@@ -43,16 +40,16 @@ Any type of vibration is capable of producing sound, as long as it meets the req
 
 Any vibration can be broken down into a composition of sine waves – a Fourier series, each of which can be uniquely identified by its frequency, amplitude and starting phase. Describing a complex vibration by deriving the characteristics of its composing simple vibrations is named a Fourier analysis~\cite{fundamentals-of-hearing-w-yost}. 
 
-\subsection{Sound Perception}
-\label{ssec:sound-perception}
+\section{Sound Perception}
+\label{sec:sound-perception}
 
 Without delving into the anatomical details, the process of hearing starts once a sound wave vibrates our eardrum, and after going through the outer, middle and inner ear, what reaches our auditory nervous system is no longer a mechanical vibration but a nervous impulse, now up to our brain to interpret. 
 
 Perceptually, the changes in amplitude of a sine wave tend to be experienced as loudness while changes in frequency are labeled as pitch~\cite{fundamentals-of-hearing-w-yost}.
 
 
-\subsection{Sound Propagation}
-\label{ssec:sound-propagation}
+\section{Sound Propagation}
+\label{sec:sound-propagation}
 
 For a sound to reach our ears or any other point, it must first travel through a medium with both the properties of elasticity and inertia, as mentioned in section 2.1.1. That is to say that, for example, it can travel trough solids, liquids and gases but not through a vacuum~\cite{fundamentals-of-hearing-w-yost}. The speed at which it propagates may vary with the temperature and density of the medium, in air it is around 343 meters per second (at 20ºC)~{\cite{risoud2018sound}}.
 
@@ -68,12 +65,12 @@ Sound waves propagate in all directions from a source (circularly in 2D, spheric
 
 In addition, the intensity of a sound decreases quadratically with the distance to its source - the inverse square law~\cite{fundamentals-of-hearing-w-yost}.
 
-\subsection{Sound Localization}
-\label{ssec:sound-localization}
+\section{Sound Localization}
+\label{sec:sound-localization}
 
 As sound has no intrinsic spatial dimensions, how we perceive spatial cues is a product of our auditory system’s capability to process the physical properties of sound that correspond to spatial position~\cite{fundamentals-of-hearing-w-yost}. 
 
-There exist three spatial dimensions in which one can localize sound: the horizontal plane commonly referred to as the azimuth, the vertical plane (elevation) and the distance (range)~{\cite{fundamentals-of-hearing-w-yost,risoud2018sound}}. These are properly illustrated in Figure~\ref{fig:polar-sound-localization}.
+There exist three spatial dimensions in which one can localize sound: the horizontal plane commonly referred to as the azimuth, the vertical plane (elevation) and the distance (range)~{\cite{risoud2018sound,fundamentals-of-hearing-w-yost}}. These are properly illustrated in Figure~\ref{fig:polar-sound-localization}.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\linewidth]{polar-sound-localization}
@@ -83,17 +80,17 @@ There exist three spatial dimensions in which one can localize sound: the horizo
 
 Most of our spatial perception is heavily reliant on our binaural hearing – our ability to interpret and locate what we hear from both our ears. While monaural cues contribute to spatial hearing, namely for vertical localization and depth perception, the most important mechanisms for perceiving directional sound are binaural cues – used for localization in the horizontal plane, consisting of the interaural differences of time and intensity~\cite{spatial-audio-f-rumsey}. 
 
-Via these differences in signal reception between both ears, time and level are key physical properties that enable sound localization along the azimuthal plane and will be further addressed in section~\ref{sssec:interaural-differences}.
+Via these differences in signal reception between both ears, time and level are key physical properties that enable sound localization along the azimuthal plane and will be further addressed in section~\ref{ssec:interaural-differences}.
 
-One other important property is the sound’s spectral shape relevant for vertical localization, and it is impacted by interference phenomena such as reflection, difraction and absorption, caused by a listener’s physical features~\cite{risoud2018sound}. These alterations are captured by what is called a Head Related Transfer Function (HRTF), which we will delve into in section~\ref{sssec:hrtf}. 
+One other important property is the sound’s spectral shape relevant for vertical localization, and it is impacted by interference phenomena such as reflection, difraction and absorption, caused by a listener’s physical features~\cite{risoud2018sound}. These alterations are captured by what is called a Head Related Transfer Function (HRTF), which we will delve into in section~\ref{ssec:hrtf}. 
 
 Though not as much is known about perceiving the distance of a sound source, it is mostly influenced by the sound’s loudness and early reflections from nearby surfaces~\cite{fundamentals-of-hearing-w-yost}.
 
 
-\subsubsection{Interaural Differences}
-\label{sssec:interaural-differences}
+\subsection{Interaural Differences}
+\label{ssec:interaural-differences}
 
-The differences between the signals received by our two ears are coined the interaural differences and as briefly mentioned in section~\ref{ssec:sound-localization}, they are our auditory system’s primary mechanisms for localizing sound along the azimuthal plane. Figure~\ref{fig:interaural-differences} illustrates them clearly.
+The differences between the signals received by our two ears are coined the interaural differences and as briefly mentioned in section~\ref{sec:sound-localization}, they are our auditory system’s primary mechanisms for localizing sound along the azimuthal plane. Figure~\ref{fig:interaural-differences} illustrates them clearly.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\linewidth]{interaural-differences}
@@ -107,42 +104,69 @@ These mechanisms are dependent on the nature of the sound signal and can be infl
   
   Binaural delay is the designation of the maximum time delay between the ears,  and it enables the resolution of a source in the direction of the ear that first heard it – the precedence effect. The sound source’s angle of incidence affects the additional distance that the wave must travel to the farthest ear, thus impacting the binaural delay. For similar sound sources in different locations, the brain usually localizes the sound towards the earliest source.
   
-  When considering sinusoidal signals, ITDs may be expressed as IPDs (Interaural Phase Differences) and are fundamental for locating low frequency sounds, where the wavelength is large enough for phase differences to be noticeable. For higher frequency sounds, the interpretation for both ITD and IPD become ambiguous~\cite{fundamentals-of-hearing-w-yost}, and one can no longer tell which ear is leading or lagging~\cite{spatial-audio-f-rumsey, risoud2018sound}.
+  When considering sinusoidal signals, ITDs may be expressed as IPDs (Interaural Phase Differences) and are fundamental for locating low frequency sounds, where the wavelength is large enough for phase differences to be noticeable. For higher frequency sounds, the interpretation for both ITD and IPD become ambiguous~\cite{fundamentals-of-hearing-w-yost}, and one can no longer tell which ear is leading or lagging~\cite{risoud2018sound,spatial-audio-f-rumsey}.
 
   \item \textbf{2.	Interaural Level Difference (ILD):} Also known as the Interaural Intensity Difference, the ILD pertains to the difference in intensity of the same sound between the two ears. 
 
-  The intensity of the stimulus at the ear closer to the source is slightly greater due to proximity (as explained by the inverse square law, mentioned at the end of section~\ref{ssec:sound-propagation})~{\cite{fundamentals-of-hearing-w-yost,spatial-audio-f-rumsey}}. However, the extra distance the wave travels to the farther ear is negligible and the intensity differences minimal~\cite{spatial-audio-f-rumsey}.
+  The intensity of the stimulus at the ear closer to the source is slightly greater due to proximity (as explained by the inverse square law, mentioned at the end of section~\ref{sec:sound-propagation})~{\cite{spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}}. However, the extra distance the wave travels to the farther ear is negligible and the intensity differences minimal~\cite{spatial-audio-f-rumsey}.
 
   In fact, the primary contributor to ILDs is not proximity, but the attenuation caused by the head’s sound shadow for high-frequency sounds. A higher frequency implies a shorter wavelength and a greater sound shadow, and thus a more noticeable difference in level~\cite{fundamentals-of-hearing-w-yost}. 
   The same cannot be said for low frequencies, at which the head is not a decent barrier to sound~\cite{spatial-audio-f-rumsey}.
 \end{itemize}
-Both these mechanisms complement each other in providing fundamental cues for localizing sound sources in the azimuthal plane. However, these are not without their limitations, some of which we will adress in subsection~\ref{sssec:confusion-cone}.
+Both these mechanisms complement each other in providing fundamental cues for localizing sound sources in the azimuthal plane. However, these are not without their limitations, some of which we will adress in subsection~\ref{ssec:confusion-cone}.
 
-\subsubsection{The Cone Of Confusion}
-\label{sssec:confusion-cone}
+\subsection{The Cone Of Confusion}
+\label{ssec:confusion-cone}
 
-\subsubsection{Head Related Transfer Function (HRTF)}
-\label{sssec:hrtf}
+Though the interaural differences are crucial and effective in locating sound along the horizontal plane, there is one particular exception to this – the cone of confusion~\cite{risoud2018sound,fundamentals-of-hearing-w-yost}. 
+
+When a listener’s head is stationary, detecting whether a sound is coming from the front or from behind, or even its elevation is far from obvious. This is because there are some locations producing the same interaural differences~\cite{risoud2018sound,fundamentals-of-hearing-w-yost}. The plane in which these ambiguous points lie is dubbed the mid-sagittal plane~\cite{fundamentals-of-hearing-w-yost} and it forms the so called cone of confusion (see Figure~\ref{fig:cone-of-confusion}), its axis being the interauricular line~\cite{risoud2018sound}.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{cone-of-confusion}
+  \caption{Cone of confusion}
+  \label{fig:cone-of-confusion}
+\end{figure}
+
+Any sound deriving from this cone’s circumference produces neither time nor level differences, while any other sound coming from elsewhere inside the cone has at least one other point mirroring its interaural differences~\cite{risoud2018sound}. Every sound source location has its own cone of confusion describing the other possible locations producing the same interaural differences~\cite{fundamentals-of-hearing-w-yost}.
+
+There are however ways of reducing this ambiguity, the most intuitive being our natural head movements~\cite{risoud2018sound,spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}. Simply leaning our head or rotating it tears down the original cone of confusion by altering the ITD and ILD values, introducing additional binaural and spectral cues – enhancing localization. 
+
+If head movement isn’t an option, our auditory system relies on the spectral cues derived from the HRTFs~\cite{risoud2018sound,fundamentals-of-hearing-w-yost} (we will address them in some detail in section~\ref{ssec:hrtf}), which are not only critical in determining the vertical direction of sound but also in distinguishing between the ambiguous sounds along the azimuthal plane~\cite{risoud2018sound}.
+
+\subsection{Head Related Transfer Function (HRTF)}
+\label{ssec:hrtf}
+
+As explained in section~\ref{ssec:confusion-cone}, due to the cone of confusion, interaural differences by themselves are not enough to adequately determine the direction of a sound, especially along the vertical plane.
+
+The path of a sound to our ears is rarely an uneventful one, as our very anatomy induces significant changes in its spectrum. Our head, torso and more importantly, the structure of the pinna act as sound shadows in the sound’s trajectory, which are particularly accentuated for high-frequency sounds (since the wavelength is closer to the small size of the pinna)~{\cite{fundamentals-of-hearing-w-yost}}. Furthermore, the listed physical features interfere with an incoming sound wave through reflection, diffraction and absorption, attenuating or delaying certain frequencies composing it~\cite{risoud2018sound,spatial-audio-f-rumsey}. 
+
+These effects, caused by the filtering action of the pinna and body, are known as spectral cues~\cite{fundamentals-of-hearing-w-yost} and are determined monaurally~\cite{spatial-audio-f-rumsey}. Depending on both the position of the sound’s source as well as its angle of incidence~\cite{spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}, such cues uniquely shape a sound’s spectrum at the eardrum level and are captured by what is called a Head Related Transfer Function (HRTF)~{\cite{fundamentals-of-hearing-w-yost}}. 
+
+In essence, an HRTF is a descriptor for the transformations a sound undertakes on its route to a listener’s tympanum, due to the listener’s physical features. For complex and high-frequency sounds, it is a highly competent mechanism for estimating the vertical position of a sound, but performs poorly for non-complex and low-frequency sounds (likely due to the wavelength exceeding the size of the pinna)~{\cite{risoud2018sound}}. Figure~\ref{fig:hrtf} shows how it may be measured.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{hrtf-2}
+  \caption{HRTF measurement}
+  \label{fig:hrtf}
+\end{figure}
+
+In general, vertical localization tends to be less accurate than its horizontal counterpart. However, coupling spectral cues with the previously mentioned interaural differences is a good approach for resolving the ambiguities within the cone of confusion, without the need for head movement~\cite{fundamentals-of-hearing-w-yost}. 
+
+Just as individuals greatly vary in their morphology, so does the shape and size of their pinna. Consequently, each person has their own unique set of HRTFs that they’ve learned over the course of their lives~\cite{risoud2018sound,spatial-audio-f-rumsey}.
+Additionally, research has found that amplifications or attenuations in particular regions of the frequency spectrum seem to correspond to specific sound source positions~\cite{spatial-audio-f-rumsey}. 
+
+Generalizing the spectral characteristics that compose HRTFs across a vast demographic is of great convenience as it simplifies their implementation process, while ensuring reasonable accuracy for a large number of listeners. However, to no surprise, an individual’s best HRTFs’ are their own~\cite{spatial-audio-f-rumsey}.
+
+Nonetheless, there have been studies in which subjects are fed audio signals through HRTFs other than their own~\cite{risoud2018sound,spatial-audio-f-rumsey} – to find their ability to localize sound significantly hampered~\cite{spatial-audio-f-rumsey}. After some time, the participants appear to begin learning the HRTFs they’ve been given and eventually regain normal vertical localization~\cite{risoud2018sound}. As some people are known to localize audio better than others, their HRTFs tend to be considered more applicable for general use~\cite{spatial-audio-f-rumsey}.
+
+Delivering audio stimuli over headphones is convenient and establishes a controlled environment\cite{fundamentals-of-hearing-w-yost}. However, certain headphone types induce a feeling of the sound emanating from inside the head, rather than the natural tri-dimensional externalisation (azimuth, elevation and range) we are accostumed to~\cite{spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}. 
+
+In short, headphones fail to deliver on the nuances captured by HRTFs, since these emit the sound directly to our ear, while a real outside source would first be affected by our physical features. 
+
+Luckily, simulating externalisation effectively is rather intuitive: recreate a sound with all the spectral complexity of a real-world one by applying HRTF-based filtering and only then transmitting it~\cite{fundamentals-of-hearing-w-yost}.
 
 
-\section{Immmersive Audio}
-\label{sec:immersive-audio}
-
-\subsection{Spatial Audio}
-\label{ssec:spatial-audio}
-
-\subsection{Stereo VS Surround Sound}
-\label{ssec:stereo-vs-surround}
-
-\subsection{Techniques For Rendering 3D Audio}
-\label{ssec:rendering-3d-audio}
-
-%% Vale a pena falar disto?
-% \subsubsection{Ambisonics}
-% \label{sssec:ambisonics}
-
-% \subsubsection{Wave Field Synthesis (WFS)}
-% \label{sssec:wfs}
 
 \section{Human-Computer Interaction}
 \label{sec:hci}
