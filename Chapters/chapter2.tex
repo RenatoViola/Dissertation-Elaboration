@@ -146,7 +146,9 @@ The path of a sound to our ears is rarely an uneventful one, as our very anatomy
 
 These effects, caused by the filtering action of the pinna and body, are known as spectral cues~\cite{fundamentals-of-hearing-w-yost} and are determined monaurally~\cite{spatial-audio-f-rumsey}. Depending on both the position of the sound’s source as well as its angle of incidence~\cite{spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}, such cues uniquely shape a sound’s spectrum at the eardrum level and are captured by what is called a Head Related Transfer Function (HRTF)~{\cite{fundamentals-of-hearing-w-yost}}. 
 
-In essence, an HRTF is a descriptor for the transformations a sound undertakes on its route to a listener’s tympanum, due to the listener’s physical features. For complex and high-frequency sounds, it is a highly competent mechanism for estimating the vertical position of a sound, but performs poorly for non-complex and low-frequency sounds (likely due to the wavelength exceeding the size of the pinna)~{\cite{risoud2018sound}}. Figure~\ref{fig:hrtf} shows how it may be measured.
+In essence, an HRTF is a descriptor for the transformations a sound undertakes on its route to a listener’s tympanum, due to the hearer’s physical features. 
+
+For complex and high-frequency sounds, it is a highly competent mechanism for estimating the vertical position of a sound, but performs poorly for non-complex and low-frequency sounds (likely due to the wavelength exceeding the size of the pinna)~{\cite{risoud2018sound}}. Figure~\ref{fig:hrtf} shows how it may be measured.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\linewidth]{hrtf-2}
@@ -159,7 +161,7 @@ In general, vertical localization tends to be less accurate than its horizontal 
 Just as individuals greatly vary in their morphology, so does the shape and size of their pinna. Consequently, each person has their own unique set of HRTFs that they’ve learned over the course of their lives~\cite{risoud2018sound,spatial-audio-f-rumsey}.
 Additionally, research has found that amplifications or attenuations in particular regions of the frequency spectrum seem to correspond to specific sound source positions~\cite{spatial-audio-f-rumsey}. 
 
-Generalizing the spectral characteristics that compose HRTFs across a vast demographic is of great convenience as it simplifies their implementation process, while ensuring reasonable accuracy for a large number of listeners. However, to no surprise, an individual’s best HRTFs’ are their own~\cite{spatial-audio-f-rumsey}.
+Generalizing the spectral characteristics that compose HRTFs across a vast demographic is of great convenience as it simplifies their implementation process, while ensuring reasonable accuracy for a large number of listeners. However, to no surprise, an individual’s best HRTFs are their own~\cite{spatial-audio-f-rumsey}.
 
 Nonetheless, there have been studies in which subjects are fed audio signals through HRTFs other than their own~\cite{risoud2018sound,spatial-audio-f-rumsey} – to find their ability to localize sound significantly hampered~\cite{spatial-audio-f-rumsey}. After some time, the participants appear to begin learning the HRTFs they’ve been given and eventually regain normal vertical localization~\cite{risoud2018sound}. As some people are known to localize audio better than others, their HRTFs tend to be considered more applicable for general use~\cite{spatial-audio-f-rumsey}.
 
@@ -167,7 +169,7 @@ Delivering audio stimuli over headphones is convenient and establishes a control
 
 In short, headphones fail to deliver on the nuances captured by HRTFs, since these emit the sound directly to our ear, while a real outside source would first be affected by our physical features. 
 
-Luckily, simulating externalisation effectively is rather intuitive: recreate a sound with all the spectral complexity of a real-world one by applying HRTF-based filtering and only then transmitting it~\cite{fundamentals-of-hearing-w-yost}.
+Luckily, simulating externalisation effectively is rather intuitive: recreate a sound with all the spectral complexity of a real-world one by applying HRTF-based filtering and only then transmit it~\cite{fundamentals-of-hearing-w-yost}.
 
 
 \section{Soundscape}
