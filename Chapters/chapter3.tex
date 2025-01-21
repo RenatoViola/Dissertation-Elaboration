@@ -24,7 +24,7 @@
 \setlength\epigraphrule{0pt}
 
 \epigraph{
-  This chapter reviews relevant research and applications related to the topic, including technologies and approaches that have been used to address accessibility for visually impaired individuals. It identifies existing gaps and highlights the unique aspects of the proposed solution in comparison to current state-of-the-art techniques, as well as some similarities.
+  This chapter reviews relevant research and applications mostly related to immersive spatial audio and BVI accessibility, including technologies and approaches that have been used to address said accessibility. It is divided by sections, each of which focusing on a specific topic related to the dissertation's theme. Each of these sections starts with a brief overview of related studies and projects displaying the current state of the art. It is then followed by subsections where projects that are of particular relevance to this dissertation are explored in some detail, from implementation to findings, and finally how they relate to our work and what is to be learned from them.
 }{}
 
 \section{Immersive Audio Experiences in Cultural Environments}
@@ -73,11 +73,11 @@ While gaze tracking proves itself a mostly intuitive approach to dynamic audio s
 Nonetheless, this study provides valuable insights to our own. Akin to our proposal’s proximity-based 3D audio, it narrates a painting’s visual elements by spatially embedding sounds to specific points of interest and dynamically adjusting their intensities. Furthermore, there is relevance in learning from the challenges highlighted by Yang et al., namely in ensuring smooth audio transitions, responsiveness and accommodating for some degree of personal preference, through personalization.
 
 
-\section{Accessibility in Auditory Representations of Art and Virtual Environments}
+\section{BVI Accessibility in Multisensory Experiences}
 
 Multisensory experiences have been shown to have potential in improving accessibility and independence for the blind and visually impaired, by providing alternative ways of perceiving content considered to be visual in essence.
 
-Li~\cite{li2024beyond} developed an audio-only inclusive prototype for navigating AR content without having to rely on visual cues, by incorporating spatialized audio to provide intuitive feedback on object proximity and spatial relationships. Meanwhile, Cavazos Quero et al.~\cite{cavazos2021accessible} implemented a touch-sensitive multimodal guide providing localized audio descriptions based on touch, promoting independence in both the exploration and interpretation of artworks. Banf and Blanz~\cite{banf2013sonification} presented a system using touchscreens that actively promotes a visually impaired user to explore an image and receive audio feedback corresponding to its local content. Such was achieved by employing computer vision and machine learning algorithms to sonify images from low to a high level.
+Li~\cite{li2024beyond} developed an audio-only inclusive prototype for navigating AR content without having to rely on visual cues, by incorporating spatialized audio to provide intuitive feedback on object proximity and spatial relationships. Meanwhile, Cavazos Quero et al.~\cite{cavazos2021accessible} implemented a touch-sensitive multimodal guide providing localized audio descriptions based on touch, promoting independence in both the exploration and interpretation of artworks. Banf and Blanz~\cite{banf2013sonification} presented a system using touchscreens that actively promotes a visually impaired user to explore an image and receive audio feedback corresponding to its local content. Such was achieved by employing computer vision and machine learning algorithms to sonify image features from a low level, such as color and texture, to  high level object recognition.
 
 \subsection{Navmol}
 
@@ -118,9 +118,14 @@ The work of Ahmetovic et al. parallels that of this dissertation in certain aspe
 
 
 
-\section{Leisurely and BVI Inclusive Applications}
+\section{Leisurely BVI Inclusive Applications}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+Leisurely applications such as games designed for BVI individuals aim to merge entertainment with accessibility by integrating multisensory technologies such as spatial audio and haptics, among others. Their goal is to provide experiences that are as unique as they are inclusive.
+
+Nair et al.~\cite{nair2021navstick} introduced a spatial audio-based navigation tool for 3D games, enabling BVI players to independently explore and create their own mental maps of virtual worlds. Navstick uses HRTFs for spatialized sound and allows users to scan the contents of their vicinity in specific directions using a thumbstick. Furthermore, Navstick is the directional scanner SAT employed in subsection~\ref{ssec:sats}, and yielded positive feedback.
+Sánchez and Sáenz~\cite{sanchez2007usability} designed and evaluated the usability of three distinct interactive 3D virtual environments for visually impaired learners: AudioMUD, AudioVida and AudioChile. Such environments were navigatable and interacted with through sound, their spatiality conveyed by spatialized audio and described by voiced narration.
+Simão~\cite{simao2018jogo} proposed B\textsc{lind} A\textsc{dventure}, a mobile audio game aimed at training the orientation and mobility skills of visually impaired children, by presenting several challenges requiring physical movement, tracked through the device’s sensors. The game’s virtual environments were built with the Unity game engine and featured localizable sound cues, implemented through HRTFs derived from the SADIE database.
+
 
 \subsection{LEAP Tic-Tac-Toe}
 
@@ -148,6 +153,7 @@ Drossos et al.’s findings are of value for this dissertation as they address c
 
 
 \subsection{The Preferred Spatial Awareness Tools for BVI People In Video Games}
+\label{ssec:sats}
 
 While the minimap is one of the most employed spatial awareness tools (SATs) in video games, crucial even for sighted players in learning the layout of their surroundings, it still has no successful equivalent in regards to BVI accessibility. 
 
@@ -177,9 +183,9 @@ Despite its focus being on studying the performance of the SATs within the diffe
 
 Following a user study with 9 participants, of which eight were completely blind, the most critical aspect of spatial awareness was found to be position and orientation. Presence, arrangement and adjacent areas were tied for second place, whilst shape and scale overwhelmingly came last. 
 
-One of the key findings was that despite the importance of position and orientation, none of the approaches were fully satisfactory, though the directional scanner performed the best. One other relevant takeaway was the effectiveness of combining some of the SATs, with the greatest spatial awareness being provided by the directional scanner and simple audio menu combination. Finally, visually impaired individuals greatly value customizable SATs, as the aforementioned SAT combination was closely followed by the combination of the directional scanner and whole-room shockwave. This is despite the whole-room shockwave having been considered overwhelming in several instances (yet costumizable), and the simple audio menu a great way to communicate presence (yet disliked by half the participants for being “spoilery”).
+One of the key findings was that despite the importance of position and orientation, none of the approaches were fully satisfactory, though the directional scanner performed the best. One other relevant takeaway was the effectiveness of combining some of the SATs, with the greatest spatial awareness being provided by the directional scanner and simple audio menu combination. Finally, visually impaired individuals greatly value customizable SATs, as the aforementioned SAT combination was closely followed by the combination of the directional scanner and whole-room shockwave. This is despite the whole-room shockwave having been considered overwhelming in several instances (yet customizable), and the simple audio menu a great way to communicate presence (yet disliked by half the participants for being “spoilery”).
 
-Nair et al.’s research provides several insights to the current dissertation mostly by exposing the strengths and weaknesses of the different SATs but also in the accessible design of Dungeon Escape. Most importantly, it highlights the importance of position and orientation for proper spatial understanding and exploration, which we will prioritize conveying in our work, possibly by incorporating combinations of the most synergetic SATs as was done in their study. Additionally, it touches on how users may be overwhelmed by too much detail, inspiring us to focus on providing cues qualitively rather than quantitively.
+Nair et al.’s research provides several insights to the current dissertation mostly by exposing the strengths and weaknesses of the different SATs but also in the accessible design of Dungeon Escape. Most importantly, it highlights the importance of position and orientation for proper spatial understanding and exploration, which we will prioritize conveying in our work, possibly by incorporating combinations of the most synergetic SATs as was done in their study. Additionally, it touches on how users may be overwhelmed by too much detail, inspiring us to focus on providing cues qualitatively rather than quantitatively.
 
 
 
@@ -187,7 +193,16 @@ Nair et al.’s research provides several insights to the current dissertation m
 
 \section{Tools for Soundscape Creation}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+The current market is home to advanced soundscape creation software, enabling creators to design highly detailed and expressive auditory environments tailored to the most diverse applications. Different tools have different purposes, with some focusing on professional sound design, where the spatial accuracy of sound environments is the priority, whilst others aim for dynamism and adaptability.
+
+In the matter of sound design and immersive spatial audio, Dolby Atmos~\cite{dolby-atmos} stands out as the industry’s standard in delivering 3D audio experiences, be it in entertainment, gaming or VR. In Dolby Atmos~\cite{dolby-atmos}, environment creation is object-based, meaning that sounds may be placed and moved as discrete objects in a 3D space. Sound Particles~\cite{sound-particles} is one other tool meriting a mention, as it too delivers immersive high quality audio for films, gaming and virtual environments, excelling on large-scale 3D audio effects by simulating spatialized sound with particle systems.
+
+Though not exclusively centered around sound design and production, game engines such as Unity~\cite{unity} and Unreal Engine~\cite{unreal-engine} have proven to be effective platforms for soundscape creation, offering robust audio capabilities and integrations. Unity~\cite{unity}, for instance, provides built-in spatial sound support through its default audio system, with more advanced spatial audio capabilities being made available through integration with third-party tools like FMOD~\cite{fmod} and Google’s Resonance Audio~\cite{resonance-audio}. Unreal Engine~\cite{unreal-engine} features a built-in audio engine supporting 3D spatialization, reverberation effects and audio triggers, more advanced than Unity’s~\cite{unity} default audio system but not accounting for its third-party augmentations.
+
+As expressive and competent as the tools mentioned so far are, there is a significant learning curve to them, a tradeoff for such feature richness and customization ability. In the context of this dissertation, where the process of soundscape creation shouldn’t require prior experience in sound design, an adequate balance between expressiveness and complexity is a must. Additionally, there are certain design considerations we should adhere to or at least consider regarding the visually impaired, addressed in certain research.
+
+Guerreiro et al.~\cite{guerreiro2023design} proposed a theoretical framework to support BVI inclusive auditory representations of object location, behavior and interaction virtual environments, utilizing spatialized sound and sonification in Unity. Their proposed design space explored nine distinct categories, such as the audio field, concurrency and spatialization. A user study they conducted showed that sound spatialization wasn’t always preferred, particularly when dealing with moving objects, and that fully concurrent auditory feedback could be mentally overwhelming. Meanwhile, Krol et al.~\cite{krol2024design} investigated the use of automated musical soundscapes in visual art accessibility for the visually impaired. From their study, several design considerations were highlighted: enhancing narrative comprehension by integrating storytelling elements; soundscape customization options; integration with other accessibility methods such as audio descriptions; contextual and historical accuracy/adequacy; inclusion of ambient sound effects; effective audio reproduction such as spatial sound and reverb to convey location, movement and atmosphere.
+
 
 \subsection{Immerscape}
 \label{ssec:immerscape}
@@ -211,19 +226,3 @@ It is one of many examples where spatialized audio with the HRTF technique was p
 
 While Ferreira’s work targets general audiences rather than the BVI demographic, there is much to take away from it in the context of this dissertation.
 Immerscape’s design as well as its implementation of the HRTF filters is undoubtebly an inspiration to what will transpire over the course of our work, particularly regarding spatial audio simulation and ease of use for non-experienced users. Furthermore, some of the requirements defined by Ferreira including predefined 3D sound environments, editable audio sources and real-time playback of the scene are likely to be imported over to our research, aligning with our goal of creating an intuitive yet expressive soundscape editor.
-
-
-
-
-\subsection{Design Space Considerations}
-
-\section{Concluding Remarks}
-
-Objective: Provide a synthesis of the reviewed work, highlighting gaps and considerations relevant to your proposed solution.
-
-Topics to Include:
-Key limitations of existing immersive audio systems and accessibility efforts.
-Opportunities for innovation in soundscape design and spatial audio accessibility.
-Final considerations for designing a tool that balances accessibility, interactivity, and usability for both creators and BVI users.
-
-Link to Dissertation: Summarize how your proposed solution builds upon and addresses the shortcomings identified in prior research.
