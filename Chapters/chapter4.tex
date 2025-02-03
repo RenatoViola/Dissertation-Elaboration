@@ -12,7 +12,7 @@
 \label{cha:proposed-solution}
 
 \epigraph{
-    This chapter describes the proposed system's architecture in some detail, addressing the expected technological stack, the envisioned plan for its development and the methodology for validating the solution. The work plan/schedule is mapped in a Gantt chart.
+    This chapter provides a somewhat detailed overview of the proposed system, also briefly exposing the solution's validation methodology. Further, it addresses the expected technological stack and the envisioned plan for the system's development. The work schedule is split into five distinct and concisely explained tasks, which are mapped in a Gantt chart.
 }{}
 
 \section{Proposal Overview}
@@ -31,15 +31,15 @@ Inspired by Ferreira’s~\cite{ferreira2021creating} work on Immerscape (address
 
 Thus, the scene is built with a similar block-based system and alike Minecraft’s creative mode, allows for movement in all directions, including free flight. There will be multiple block types, such as: 3D sound emitter, ambient audio, collidable block (only simulates physical barriers, does not emit sound) and user-customized ones. These blocks are editable in several ways, some of which being volume, loop settings, sound file association and object representation.
 
-Users supply their own sound assets, storing them in a dedicated directory in supported formats (these formats are yet to be decided but are likely to be WAV and/or MP3).
-
 When developing a scene, insights into the end user’s experience are crucial to iteratively improving it. Hence, there are two main modes to the editor: Development Mode, where scenes are built and tailored, and Interactive Mode, where users can test the experience from the point of view of the end-user, though with desktop controls.
 
 Additionally, the user may define default values and boundaries for movement speed, audio cardinality and zoom level in the exported scene, and may also provide a verbal description for the whole piece. Once a scene is created, it can be saved, loaded, and further edited as needed. Furthermore, a built-in help function will be available at all times, offering a concise explanation of the system’s functionalities.
 
-\subsection{Mobile interaction (APK-based proof of concept)}
+Users supply their own sound assets, storing them in a dedicated directory in supported formats (these formats are yet to be decided but are likely to be WAV and/or MP3). On exportation, the editor packages the scene's data (possibly in either JSON or XML) and stores it in a designated folder.
 
-The end result of a scene exported from the developed soundscape editor is a top-down 2D representation of the soundscape with large high-contrasting elements representing directional sound sources and collidable zones, making them easier to distinguish within the environment. This is in line with common BVI accessibility practices for visual interfaces in other related studies~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo}.
+\subsection{Mobile Soundscape Player (APK-based proof of concept)}
+
+Loading up a scene exported from the developed soundscape editor and then parsing it, the mobile application displays a top-down 2D representation of the soundscape with large high-contrasting elements representing directional sound sources and collidable zones, making them easier to distinguish within the environment. This is in line with common BVI accessibility practices for visual interfaces in other related studies~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo}.
 
 Navigation through the virtual space happens through a virtual joystick control schema, inspired by Nair et al.’s~\cite{nair2022uncovering} Dungeon Escape game and other mainstream 3D games such as the earliest Resident Evil~\cite{resident-evil} titles. Spatial position, orientation and proximity to different parts of the artwork are felt through directional audio (implemented through HRTF filters) and dynamic intensity regulation.
 
@@ -67,3 +67,20 @@ For these reasons, we turned to the Steam Audio~\cite{steam-audio} framework ins
 
 
 \section{Work Plan}
+
+As to adequately manage and organize the work to be developed over the course of this dissertation, the proposed solution’s implementation will constitute of five distinct stages of development, each representing a relevant milestone:
+\begin{itemize}
+    \item \textbf{Initial Research \& Concept Refinement:} Initially, some time will be reserved to develop simple conceptual mockups of both the desktop editor and the mobile prototype, showcasing their key functionalities and accessibility considerations. These are then to be presented to supposed end-users, such as non-experts in sound design and BVI individuals, respectively. The feedback gathered will serve to assess whether the currently proposed feature set is adequate for the audience’s needs, and to ultimately refine it.
+    \item \textbf{Soundscape Editor (PC) – Development:} Upon finalizing the architecture details for both applications based on user feedback and confirming what technologies are to be utilized, the focus will shift onto the editor’s core development. Such will mainly consist in integrating advanced spatial audio with the Steam Audio~\cite{steam-audio} framework and implementing movement alongside an expressive block-based system. Other subtasks include developing a simple UI allowing for adjustable settings and scene creation, editing and erasure. Since the proposed interactive mode is an emulation of the mobile interaction, it will likely be developed alongside it. 
+    \item \textbf{Mobile Interactive Prototype  – Development:} The design of the mobile interaction’s accessible map view parsed out of a previously editor-generated scene will be first subtask under focus. Immediately after, comes the joystick-based navigation assisted with snap rotation and directional scanning. Finally, spatialized audio feedback and collision detection will be integrated, alongside the ability to toggle between sequential and concurrent stimuli, adjusting audio cardinality and triggering the scene’s verbal description.
+    \item \textbf{Results and System Evaluation:} Before proceeding with evaluation, we will take the time to thoroughly test both parts of the developed system and debugging it where needed. We will then define an adequate methodology for evaluating each part of the solution, catering to its specific end-user demographic. Having established the evaluation methodology to apply, user tests with the targeted audiences will be conducted and the gained insights shall be used to assess the system’s quality both in usability and accessibility.
+    \item \textbf{Dissertation Writing \& Revisions:} The dissertation document will be written in parallel with some of the aforementioned tasks and will mainly consist of incorporating the implementation details and evaluation results into the discussion. Additionally, previously written chapters may be revisited and refactored where needed.
+  \end{itemize}
+
+The following chart (Figure~\ref{fig:work-plan-img}) exposes the expected duration of each of the tasks defined in the proposed work plan.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{work-plan}
+    \caption{Gantt chart displaying the proposed work distribution over the remaining months.}
+    \label{fig:work-plan-img}
+  \end{figure}
