@@ -45,15 +45,29 @@ The soundscape content was developed by the research team (in this case, the aut
 
 \subsection{User Characterization}
 
-A total of eight participants took part in the evaluation of the mobile soundscape player. None of them had been previously exposed to the application or its functionalities, ensuring that their feedback reflected first-time user impressions rather than prior familiarity.
+A total of eight participants took part in the evaluation of the mobile soundscape player. None of them had been previously exposed to the application or its functionalities, ensuring that their feedback reflected first-time user impressions rather than prior familiarity. Table~\ref{tab:hla:mobile-user-characterization} characterizes the participants.
 
-Participants’ ages ranged from 28 to 56 years old, with an average of 42.5 years. The age distribution is illustrated in Figure~\ref{fig:validation-age-distribution}, which shows that the sample was relatively balanced across middle adulthood, though no participants under 25 or above 60 were included.
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Age distribution.}
-  \label{fig:validation-age-distribution}
-\end{figure}
+Participants’ ages ranged from 28 to 56 years old, with an average of 42.5 years. The subject sample was relatively balanced across middle adulthood, though no participants under 25 or above 60 were included.
+\bgroup
+\rowcolors{1}{}{GhostWhite}
+\begin{xltabular}{\textwidth}{Xccccc}
+  \caption{User characterization by identifier.}
+  \label{tab:hla:mobile-user-characterization}\\
+  \toprule
+  \rowcolor{Gainsboro}%
+  ID & Age & Gender & Degree of Vision \\
+  \midrule
+1 & 54 & Male & Low Vision \\
+2 & 41 & Male & Blind \\
+3 & 56 & Female & Blind \\
+4 & 37 & Female & Low Vision \\
+5 & 37 & Male & Blind \\
+6 & 36 & Female & Blind \\
+7 & 51 & Male & Blind \\
+8 & 28 & Male & Blind \\
+  \midrule
+  \end{xltabular}
+\egroup
 
 The group consisted of five male participants (62.5\%) and three female participants (37.5\%). In terms of visual condition, six participants (75\%) were blind and two participants (25\%) were classified as having low vision. Among the blind participants, some reported having lost their sight later in life rather than being blind from birth, which in some cases influenced the way they described their perception and interaction with auditory cues. Overall, the participant pool was diverse in terms of gender, age, and visual condition, and while small in absolute number, it provided a representative spectrum of BVI experiences relevant to evaluating the application’s accessibility.
 
@@ -73,56 +87,56 @@ Collectively, these tasks served as a step-by-step walkthrough of the applicatio
 
 \subsection{Results Overview}
 
-The evaluation of the mobile soundscape player yielded encouraging results overall, with participants rating most of the features positively. It is important to note that the Likert items in the survey were phrased as declarative sentences, and scores reflect participants’ level of agreement with them. A higher score indicates only strong agreement with the statement, which may or may not correspond to a direct quality judgment depending on the item in question. The structured tasks served their purpose as a guided introduction to the system, while the subsequent exploration phases revealed both strengths and points for refinement.
+The evaluation of the mobile soundscape player yielded encouraging results overall, with participants rating most of the features positively. It is important to note that the Likert items in the survey were phrased as declarative sentences, and scores reflect participants’ level of agreement with them (1 = strongly disagree, 5 = strongly agree). A higher score indicates only strong agreement with the statement, which may or may not correspond to a direct quality judgment depending on the item in question. The structured tasks served their purpose as a guided introduction to the system, while the subsequent exploration phases revealed both strengths and points for refinement.
 
-The optional Task 0, which involved zoom and visual mode adjustments, was only presented to low-vision participants and, as anticipated, had little overall impact on the evaluation.
+Task 0, which involved zoom and visual mode adjustments, was only presented to low-vision participants and, as anticipated, had little overall impact on the evaluation.
 
-In terms of navigation, participants generally felt quite able using the left joystick to move through the scene and orientating themselves via the clock system, as can be seen in figure X. 
+In terms of navigation, participants generally felt quite able using the left joystick to move through the scene and orientating themselves via the clock system, as can be seen in figure~\ref{fig:navigation-and-orientation}. 
+Only participant 8 found himself neutral to the orientation feature's usefulness, with 38\% of participants scoring it highly and 50\% very highly. As for the movement and rotation via the left joystick, half of the participants were comfortable with these controls while the other half stated to be very comfortable. These results could in part be due to their experience with gamepads in other user studies, but even participants who had less previous exposure to such interfaces learned the movement controls very quickly.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Navigation and orientation}
+  \includegraphics[width=1.0\linewidth]{navigation-and-orientation}
+  \caption{Histogram of participant responses regarding navigation comfort and orientation.}
   \label{fig:navigation-and-orientation}
 \end{figure}
-Only participant 8 found himself neutral to the orientation feature's usefulness, with 38\% of participants scoring it highly and 50\% very highly. As for the movement and rotation via the left joystick, half of the participants were comfortable with these controls while the other half stated to be very comfortable. These results could in part be due to their experience with gamepads in other user studies, but even participants who had less previous exposure to such interfaces learned the movement controls very quickly.
 
-In what pertains to spatial awareness, the vast majority of users reported that they could clearly identify both the direction and proximity of sound sources. Figure X displays the perceived efficacy of the implemented spatial awareness tools, as well as the overall perception of sound source direction and proximity.
+In what pertains to spatial awareness, the vast majority of users reported that they could clearly identify both the direction and proximity of sound sources. Figure~\ref{fig:spatial-awareness-features} displays the perceived efficacy of the implemented spatial awareness tools, as well as the overall perception of sound source direction and proximity.
+On average, clearness in direction and proximity were rated the same value - 4.1 out of 5. Aside from positive, this result is particularly interesting as in the early prototype's refinement study (Section Y), sound source direction had been considered significantly clearer than proximity. In the current application, that gap has apparently been bridged, likely due to the inclusion of the proximity sensor and adjustments to the sound elements in the scene.
+The said proximity sensor, which emitted increasingly frequent signals as users approached a sound source, was frequently classified as useful and intuitive. Similarly, the directional scanner allowed participants to identify specific objects in the painting with relative ease, by leaning their finger in the direction they want to listen in.
+Both functionalities were well received and close in ratings.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Spatial awareness features}
+  \includegraphics[width=1.0\linewidth]{spatial-awareness}
+  \caption{Histogram of participant responses regarding spatial awareness and related features.}
   \label{fig:spatial-awareness-features}
 \end{figure} 
-On average, clearness in direction and proximity were rated the same value - 4.1 out of 5. Aside from positive, this result is particularly interesting as in the early prototype's refinement study (Section Y), sound source direction had been considered significantly clearer than proximity. In the current application, that gap has apparently been bridged, likely due to the inclusion of the proximity sensor and adjustments to the sound elements in the scene.
-The said proximity sensor, which emitted increasingly frequent signals as users approached a sound source, was frequently classified as useful and intuitive. Similarly, the directional scanner allowed participants to identify specific objects in the painting with relative ease, by leaning their finger in the direction they want to listen on.
-Both functionalities were well received and close in ratings.
 
-Opinions were more divided regarding sound environment regulation, namely in whether ambient sound distracted from the localized elements of the painting. As can be seen in figure X, half of the participants thought that it did, while the other half thought the opposite.
+Opinions were more divided regarding sound environment regulation, namely in whether ambient sound distracted from the localized elements of the painting. As can be seen in figure~\ref{fig:sound-environment-management}, half of the participants thought that it did, while the other half thought the opposite.
+Independent of their stance on ambient sound, all participants considered the ability to toggle it on or off indispensable, unanimously rating its usefulness a 5 out of 5. In addition, participants appreciated being able to adjust the number of active sound sources, indicating that the ability to manage the auditory scene's complexity was highly valued.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Sound environment management}
+  \includegraphics[width=1.0\linewidth]{sound-environment}
+  \caption{Histogram of participant responses regarding sound environment regulation.}
   \label{fig:sound-environment-management}
 \end{figure} 
-Independent of their stance on ambient sound, all participants considered the ability to toggle it on or off indispensable, unanimously rating its usefulness a 5 out of 5. In addition, participants appreciated being able to adjust the number of active sound sources, indicating that the ability to manage the auditory scene's complexity was highly valued.
 
-Regarding the two available playback modes - simultaneous and sequential, participants felt both modes were distinct and impactful in their own way, but favored simultaneous reproduction by a fair margin, as illustrated in Figure X. 
+Regarding the two available playback modes - simultaneous and sequential, participants felt both modes were distinct and impactful in their own way, but favored simultaneous reproduction by a fair margin, as illustrated in figure~\ref{fig:playback-modes}. 
+While sequential playback allowed some participants to focus more closely on the painting's individual elements, most felt that the simultaneous mode provided a greater sense of immersion. Participant 7, in particular, saw no purpose to the sequential reproduction mode, stating that a similar experience could be accomplished in the simultaneous mode by decreasing the number of active spatial sounds to one, and also felt that each sound source would play for too long sequentially. In contrast, participant 3 had no preference in mode, having enjoyed both equally. As preferences appear to depend on personal strategies for exploring the painting, offering both modes is valuable, even if one is considered the "better" one.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Playback modes}
+  \includegraphics[width=1.0\linewidth]{reproduction-modes}
+  \caption{Histogram of participant responses regarding the two existing reproduction modes - simultaneous and sequential.}
   \label{fig:playback-modes}
 \end{figure} 
-While sequential playback allowed some participants to focus more closely on the painting's individual elements, most felt that the simultaneous mode provided a greater sense of immersion. Participant 7, in particular, saw no purpose to the sequential reproduction mode, stating that a similar experience could be accomplished in the simultaneous mode by decreasing the number of active spatial sounds to one, and also felt that each sound source would play for too long sequentially. In contrast, participant 3 had no preference in mode, having enjoyed both equally. As preferences appear to depend on personal strategies for exploring the painting, offering both modes is valuable, even if one is the "better" one.
 
-As for the application’s control schema (results illustrated in Figure X), console controls were rated very positively, with an average agreement of 4.6 out of 5 on their intuitiveness and ease of use. While the touch controls were also described as intuitive by the majority, the responses were less consistent, with an average score of 4.1 out of 5.
+As for the application’s control schema (results illustrated in figure~\ref{fig:control-schemes}), console controls were rated very positively, with an average agreement of 4.6 out of 5 on their intuitiveness and ease of use. While the touch controls were also described as intuitive by the majority, the responses were less consistent, with an average score of 4.1 out of 5.
+Participant 2 rated the touch controls' intuitiveness a 2 out of 5, due to some difficulty with the swipe gestures and especially the position and size of the virtual joysticks. While the rest of the participants did not experience difficulties to this extent, they generally reported greater comfort and confidence with the physical controller, thus preferring this interface when asked to compare both input modes (3.75/5). However, the console scheme was not one-sidedly favored in this case, as 25\% of subjects actually preferred the touch controls and participant 1 appreciated both control schemes equally. The moderate success of the touch controls can in part be explained with the positive reception of the haptic feedback present in this schema, which may have compensated for the lack of tangible button-based physical interaction. The smartphone vibrations, triggered by collisions with the painting's borders or virtual joystick interactions, received an average score of 4 out of 5 in effectiveness. Though some users did point out that they would prefer these vibrations to be more intense.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{goku}
-  \caption{Control schemes}
+  \includegraphics[width=1.0\linewidth]{control-schemes}
+  \caption{Histogram of participant responses regarding the available control schemes - physical gamepad and touch.}
   \label{fig:control-schemes}
 \end{figure} 
-Participant 2 rated the touch controls' intuitiveness a 2 out of 5, due to some difficulty with the swipe gestures and especially the position and size of the virtual joysticks. While the rest of the participants did not experience difficulties to this extent, they generally reported greater comfort and confidence with the physical controller, thus preferring this interface when asked to compare both input modes (3.75/5). However, the console scheme was not one-sidedly favored in this case, as 25\% of subjects actually preferred the touch controls and participant 1 appreciated both control schemes equally. The moderate success of the touch controls can in part be explained with the positive reception of the haptic feedback present in this schema, which may have compensated for the lack of tangible button-based physical interaction. The smartphone vibrations, triggered by collisions with the painting's borders or virtual joystick interactions, received an average score of 4 out of 5 in effectiveness. Though some users did point out that they would prefer these vibrations to be more intense.
 
 The general reception of the application was highly positive, with participants strongly agreeing that the system provided an immersive and engaging with the painting (average score 4.4/5). Even more notably, they agreed that the set of available features allowed them to form a somewhat complete idea of the painting’s content and essence (4.6/5).
 
@@ -130,15 +144,15 @@ Responses to open-ended questions reinforced the quantitative findings of the st
 
 Taken together, the results of this study suggest that the application succeeded in delivering both an enjoyable and meaningful interpretation of the artwork, beyond the usability of individual functionalities - its potential acknowledged as both an independent exploration tool and a complement to in-person museum visits.
 
-\subsection{The Perspective of a "Returning" User}
+\subsection{The Perspective of a Returning User}
 
-One of the two blind individuals who had previously taken part in the early prototype’s concept refinement sessions, Cláudia Pires, returned to test the application in it's final state. Her participation brought a unique perspective, as she was the only person in this evaluation with any prior exposure to the application, though this occurred a month and a half earlier and under a different protocol. For this reason, her results are considered separately from those of the other participants in section 5.2.3, who all experienced the system for the first time.
+One of the two blind individuals who had previously taken part in the early prototype’s concept refinement sessions (addressed in section Y), Cláudia Pires, returned to test the application in it's final state. With her participation came a unique perspective, as she was the only person in this evaluation with any prior exposure to the application, though this occurred a month and a half earlier and under a different protocol. For this reason, her results are considered separately from those of the other participants in section 5.2.3, who all experienced the system for the first time.
 
 The early prototype that Cláudia had tested already included most of the core functionalities, but lacked features such as the proximity sensor, toggleable ambient sound, and haptic feedback. Additionally, between versions the sensitivity of the directional scanner was adjusted, and the sound attributes of the test soundscape were slightly refined. The protocol of the earlier study was similar in structure to the final one, using the same painting and a comparable sequence of tasks, though these were less specific and accompanied only by qualitative questions. Consequently, some of the tasks in the final evaluation were familiar to her, while others introduced entirely new elements.
 
-Cláudia performed these final tasks with relative ease, quickly adapting to both the revised button bindings and touch gestures. She emphasized the improvements in the directional scanner's usability and especially the mobile touch controls, which she found more reactive and supported by effective haptic feedback. -- Her responses underscored the value of these refinements, offering insight into how iterative changes were perceived by someone able to compare versions of the system. --
+Cláudia performed these final tasks with relative ease, quickly adapting to both the revised button bindings and touch gestures. She highlighted the improvements in the directional scanner's usability and especially the mobile touch controls, which she found more reactive and supported by effective haptic feedback. While Cláudia's responses to the survey aligned with the positive trends observed in section 5.2.3, they emphasize the importance of iterative improvements, especially when coming from someone able to compare versions of the system.
 
-It is also important to acknowledge Ana Inês Colares, the other blind participant who had taken part in the early prototype study but was unable to attend the final evaluation due to time constraints. Nonetheless, she played a crucial role in supporting this stage of the research by facilitating the recruitment of several other BVI participants.
+It is also important to acknowledge Ana Inês Colares, the other blind participant who had taken part in the early prototype study and also volunteered for the final study. Ultimately, she was unable to attend the final evaluation due to the researcher's time constraints. Nonetheless, her role was indispensable in supporting this stage of the research by greatly facilitating the recruitment of the BVI participants, essentially managing this process in its entirety.
 
 \section{Desktop Soundscape Creation}
 
