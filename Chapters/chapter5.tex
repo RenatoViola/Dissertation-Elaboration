@@ -142,7 +142,7 @@ The general reception of the application was highly positive, with participants 
 
 Responses to open-ended questions reinforced the quantitative findings of the study, as several participants highlighted the immersion and stimulation of the experience, some also suggesting improvements. Out of the suggestions, that of participant 5 was a particularly interesting one - incorporating clock hour narration alongside the directional scanner's narrations, for further awareness assistance. As expected, most users commented on initial difficulties in orienting themselves within the scene but reported that these lessened with practice and with new spatial awareness tools being introduced. When asked about usage context, most felt the application would be most meaningful in a museum setting alongside the artwork, others couldn't choose between using it at a museum or remotely, and one participant preferred a fully remote interaction.
 
-Taken together, the results of this study suggest that the application succeeded in delivering both an enjoyable and meaningful interpretation of the artwork, beyond the usability of individual functionalities - its potential acknowledged as both an independent exploration tool and a complement to in-person museum visits.
+The results of this study suggest that the application succeeded in delivering both an enjoyable and meaningful interpretation of the artwork, beyond the usability of individual functionalities - its potential acknowledged as both an independent exploration tool and a complement to in-person museum visits.
 
 \subsection{The Perspective of a Returning User}
 
@@ -217,9 +217,67 @@ This set of tasks exposed participants to a complete workflow of the editor: fro
 
 \subsection{Results Overview}
 
+The evaluation of the soundscape editor produced encouraging results, with participants generally finding the tool intuitive and effective for creating detailed auditory scenes. As with the mobile study's survey (addressed in Section 5.2.3), the survey's Likert-scale items were phrased as statements, scored by level of endorsement (1 = strongly disagree, 5 = strongly agree).
 
+As shown in figure~\ref{fig:initial-setup}, in terms of basic operations, such as importing the background painting and setting a global narration, participants strongly agreed that these were straightforward, with average agreeability scores nearing 5 for both of these functionalities. Comfortability adjusting the grid’s cell size and line thickness was similarly rated, a 4.8. In addition, with an average score of 4.6 out of 5, the available element types (ambient sounds, spatial sounds, and player entity) were generally considered sufficient to adequately represent the painting.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{initial-setup}
+  \caption{Histogram of participant responses regarding setting up the background painting, global narration and initial setup.}
+  \label{fig:initial-setup}
+\end{figure}
 
-\lipsum[1-10]
+As can be seen in figure~\ref{fig:placement-system}, participants expressed confidence in the clarity and intuitiveness of the implemented placement system, with an average score of 4.1 and editing operations generally perceived as simple and comprehensible. However, participant 12 rated the statement a 2, possibly due to his reported difficulties in choosing audio and narration files when editing the elements. The grid system was considered extremely easy to use by 85\% of participants, with an average score of 4.8. Well received as it was, 40\% of participants were undecided on whether the system in place was more intuitive and suitable for soundscape creation than alternatives such as drag-and-drop and point-and-click. 10\% of users had a preference for these alternative interaction models, while the remaining 50\% preferred the current grid system.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{placement-system}
+  \caption{Histogram of participant responses regarding the current grid-like placement system.}
+  \label{fig:placement-system}
+\end{figure} 
+
+When asked about the adequacy of editing options (responses shown in figure~\ref{fig:element-editing}), participants agreed that the configurable properties of ambient sounds, spatial sounds, and player attributes were sufficient to represent the desired soundscape, all with an average agreeability score equal to or over 4.5/5. Additionally, the available sound editing options were considered very comprehensible, also with a rating of 4.5, suggesting an appropriate balance between simplicity and expressiveness.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{element-editing}
+  \caption{Histogram of participant responses regarding the editing options for the existing element types.}
+  \label{fig:element-editing}
+\end{figure} 
+
+Participants responded very positively to the editor's two modes - development and interactive - as one can observe in figure~\ref{fig:modes-of-interaction}. With an average score of 5, alternating between modes was classified as extremely quick and intuitive by every participant. Furthermore, their distinct purposes were clearly understood and participants felt capable of effectively emulating and testing the soundscape in interactive mode, having created it within the development mode. Both previous statements were similarly rated and nearing an agreement score of 5, confirming the application's suitability for both soundscape construction and its validation.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{modes-of-interaction}
+  \caption{Histogram of participant responses regarding the two existing modes of interaction.}
+  \label{fig:modes-of-interaction}
+\end{figure} 
+
+According to figure~\ref{fig:help-button}, only 35\% of participants did not feel the absence of a help button. While 20\% of users were indifferent, the remaining 45\% stated a need for a help button, claiming that it would have been useful to clarify doubts on demand, despite generally completing the tasks successfully without it.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{help-button}
+  \caption{Histogram of participant responses regarding the need for a help button.}
+  \label{fig:help-button}
+\end{figure}
+
+Lastly, as displayed in figure~\ref{fig:overall-use-experience}, participants strongly considered the editor to be expressive, allowing for the creation of a detailed and immersive representation of "O Bosque Sagrado" (average score 4.6/5). They also described the experience of creation itself as both intuitive and pleasant, rating it an average of 4.8 out of 5.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{overall-use-experience}
+  \caption{Histogram of participant responses regarding the overall user experience.}
+  \label{fig:overall-use-experience}
+\end{figure}
+
+From the responses to the open-ended questions, derived the most common points for improvement, which included:
+\begin{itemize}
+  \item clearer button tooltips, since not all functionalities were implicitely self-explanatory;
+  \item a visible submit/OK button in editing popups, as some participants were uncertain whether changes had been applied;
+  \item an audio preview option within editing popups, to immediately hear the effect of adjustments;
+  \item the ability for most buttons to function as toggles (activating and deactivating features with the same control);
+  \item support for moving already placed elements rather than having to delete and recreate them;
+  \item quality-of-life enhancements, such as a visual indication of edited elements, preventing spatial sound popups from closing after adjusting volume rollof and support for editing multiple elements simultaneously.
+\end{itemize}
+
+The findings of this study confirm that the desktop editor meets its central goals of simplicity and effectiveness for users without former sound design experience, producing an interactive and immersive soundscape equivalent to the one presented to BVI individuals in section 5.2. Most importantly, these results shed light on a clear set of refinements that could further improve the experience for all of its users.
 
 \section{Summary}
 
