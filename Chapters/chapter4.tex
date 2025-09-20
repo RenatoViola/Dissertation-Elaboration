@@ -8,12 +8,13 @@
 }{}
 
 \section{Proposal Overview}
+\label{sec:proposal-overview}
 
 The solution proposed in this dissertation is a bipartite system intended to, above all, facilitate BVI-inclusive interpretation of visual paintings, via immersive and highly interactive soundscapes based on museum paintings. While clearly distinct in purpose and also in the audience they serve, these two allied parts provide both soundscape interaction and intuitive creation. Figure~\ref{fig:concept-img} attempts to illustrate the intended approach from a purely conceptual standpoint.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1.0\linewidth]{concept-cropped}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \caption{Concept representation. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
   \label{fig:concept-img}
 \end{figure}
 
@@ -29,12 +30,12 @@ The following two sections detail these components further, starting by the mobi
 The mobile application's interface (portrayed in figure~\ref{fig:mobile-overview-interface}) displays a top-down \gls{2D} representation of a soundscape, with large and high-contrasting elements representing directional sound sources, making them easier to distinguish within the environment. This approach makes use of standard \gls{BVI} accessibility practices for visual interfaces in other research~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo}. Ambient sound sources are also present but permanently hidden to prevent users with partial sight from misinterpreting them for localized sounds. The user’s head and ears are represented in the scene by a small arrow that always faces upwards on the screen, regardless of the user’s orientation within the virtual space.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{goku}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \includegraphics[width=1.0\linewidth]{placeholder}
+  \caption{The three available display modes of the mobile prototype, in the order of: Immersive, Accessible and Minimalist.}
   \label{fig:mobile-overview-interface}
 \end{figure}
 
-Still concerning the visual interface, the application offers three different display modes for users with residual vision (refer to figure X), and since these are purely visual, alternating between them is executed via a visual button in the upper left corner of the screen:
+Still concerning the visual interface, the application offers three different display modes for users with residual vision (refer to figure~\ref{fig:mobile-overview-interface}), and since these are purely visual, alternating between them is executed via a visual button in the upper left corner of the screen:
 \begin{itemize}
   \item \textbf{Immersive mode (default)} Displays the background painting and the sound sources.
   \item \textbf{Accessible mode:} A pure white background with further contrasting sound sources, where virtual joysticks are darker for better contrast.
@@ -50,8 +51,8 @@ The left joystick controls the user’s movement within the painting: vertical t
 The right joystick acts as a directional scanner akin to to Nair et al.'s~\cite{nair2021navstick} NavStick, though in \gls{2D} rather than in \gls{3D}. By tilting the joystick in a particular direction, the user can hear a localized narration of the first object in their line of sight, through a predefined speech output. Figure~\ref{fig:mobile-overview-joystick} exemplifies this scanner in practical use. To assist with a more literal interpretation of the environment, a global verbal description of the entire scene can be triggered, during which all spatial sounds pause and then resume once the narration finishes. The idea of using blocking sounds (narrations) and interruptible sounds (spatial sounds in this particular case) was inspired by Drossos et al.'s~\cite{drossos2015accessible} implementation of a BVI-accessible Tic-Tac-Toe game.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{goku}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \includegraphics[width=1.0\linewidth]{placeholder}
+  \caption{Directional scanner in use: on the left the scanner has not detected an element while on the right it has detected a spatial sound source and narrates it.}
   \label{fig:mobile-overview-joystick}
 \end{figure}
 
@@ -74,8 +75,8 @@ The workflow within the application is divided into two main modes: Development 
 In Development mode (exposed in figure~\ref{fig:desktop-editor-development-mode}), users begin by selecting a painting (via the file browser), which is displayed as a background image in the scene. Zoom level is automatically adjusted to ensure the image appropriately fits the screen, and the user may further zoom in or out to taste. Setting a global narration to represent the artwork is executed identically to defining the background image. Placement, editing and removal of elements in the scene is done via a simple grid-based building system reminiscent of city builder games, but in 2D. This rectangular grid layout dinamically fits to the painting's dimensions and is customizable in both the size of its cells and the thickness of its lines, overlaying the painting when enabled.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{goku}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \includegraphics[width=1.0\linewidth]{placeholder}
+  \caption{Development mode. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado})}
   \label{fig:desktop-editor-development-mode}
 \end{figure}
 With the painting set, curators may place elements in the grid, of which there are three clearly distinct types, selectable from the panel at the bottom center of the screen:
@@ -88,16 +89,16 @@ With the painting set, curators may place elements in the grid, of which there a
 The grid remains visible only when adjusting its properties or when active for placing, editing, or removing elements and can be closed via a button in the lower left corner, which only appears when the grid is enabled. Placing an element consists only on having it actively selected and clicking on an empty grid cell to place it, and no cell can have more than one element assigned to it. Editing and removing elements work function identically except that a cell must already have an element to be valid to act upon. When editing an element (see figure~\ref{fig:desktop-editor-editing-popups}), changes are persisted automatically rather than via an explicit submit button. Additionally, the radiuses of volume rollof in spatial sound elements and proximity definition in the player element's sensor are visualizable in the grid layout via overlapping circles of decreasing opacity.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{goku}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \includegraphics[width=1.0\linewidth]{placeholder}
+  \caption{Editing popups for a spatial sound element and the player element. The rightmost image represents the reach of the proximity sensor.}
   \label{fig:desktop-editor-editing-popups}
 \end{figure}
 
 When users want to preview the soundscape they devised as it will be made available to the visitor audience, they should use headphones for accurate spatial sound perception and enter Interactive mode. This mode effectively emulates the mobile application covered in section~\ref{ssec:mobile-soundscape-player-overview}: they may move around and scan the scene with the virtual joysticks in the lower corners of the screen and use every functionality available in the mobile application, but trigger them through buttons rather than touch gestures. At any time, users may return to Development mode, easily alternating between the two.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{goku}
-  \caption{Concept representation. Image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \includegraphics[width=1.0\linewidth]{placeholder}
+  \caption{Interactive mode.}
   \label{fig:desktop-editor-interactive-mode}
 \end{figure}
 
@@ -112,7 +113,7 @@ Aside from its powerful rendering capabilities, Unity has a friendlier learning 
 
 Unity's built-in audio system already provides sturdy audio management, featuring distance attenuation, spatial blend, and adjustable volume rolloff, among other settings. However, while this system suffices for rudimentary \gls{3D} audio, it is limited for the purposes of this work, lacking binaural rendering and other relevant capabilities. There are however specialized plugins for advanced spatial audio that address the vanilla system’s limitations by adding some of the essential and advanced spatialization functionalities it lacks.
 
-The Steam Audio\footnote{https://valvesoftware.github.io/steam-audio/} framework was selected to address this base engine limitation and has been actively maintained, well-documented, and compatible with Unity engine updates. Furthermore, this toolkit was also used in NavStick~\cite{nair2021navstick} and Dungeon Escape~\cite{nair2022uncovering}, two of the most influential works for this proposal, motivating its adoption. Steam Audio supports high-fidelity HRTF-based binaural rendering and geometry-based occlusion, reflection, and reverberation effects, among other spatial features contributing to natural sounding immersion. Though out of these features, only binaural rendering was employed (with the built-in Steam Audio \gls{HRTF}) and other properties retained their default values \textbf{(REVISITAR ISTO QUANDO TIVER O PC DE VOLTA)}. While the specific library to which its default \gls{HRTF} dataset belongs is not explicitly stated in official documentation, some online discussions suggest it may be based on Phonon\footnote{https://www.impulsonic.com/what-is-trueaudio-phonon/}, however this remains an assumption.
+The Steam Audio\footnote{https://valvesoftware.github.io/steam-audio/} framework was selected to address this base engine limitation and has been actively maintained, well-documented, and compatible with Unity engine updates. Furthermore, this toolkit was also used in NavStick~\cite{nair2021navstick} and Dungeon Escape~\cite{nair2022uncovering}, two of the most influential works for this proposal, motivating its adoption. Steam Audio supports high-fidelity HRTF-based binaural rendering and geometry-based occlusion, reflection, and reverberation effects, among other spatial features contributing to natural sounding immersion. Though out of these features, only binaural rendering was employed (with the built-in Steam Audio \gls{HRTF}) and other properties retained their default values \textbf{(TODO: Revisitar propriedades do Steam Audio quando tiver o meu PC)}. While the specific library to which its default \gls{HRTF} dataset belongs is not explicitly stated in official documentation, some online discussions suggest it may be based on Phonon\footnote{https://www.impulsonic.com/what-is-trueaudio-phonon/}, however this remains an assumption.
 
 Aside from Steam Audio, several external packages were integrated within the Unity environment in order to agilize development. One such example is DOTween\footnote{https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676}, an animation engine employed in both the mobile and desktop components of the system, for smooth transitions visually and also in sound (namely the fade effects). For haptic feedback on the smartphone, the HapticFeedback\footnote{https://github.com/CandyCoded/HapticFeedback} library was used, supporting vibration patterns of varying intensities. File system interactions in the desktop editor such as opening a file from a local desktop directory via a file dialog were supported by the UnityStandaloneFileBrowser\footnote{https://github.com/gkngkc/UnityStandaloneFileBrowser}, a third-party tool alongside the above mentioned HapticFeedback library. Lastly and also the most essential, the Input System Package\footnote{https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/index.html} was incorporated to handle all input, from keyboard bindings, to gamepad controls and even the full implementation of the touch interface, effectively replacing the entirety of Unity's built-in input system.
 
@@ -120,22 +121,26 @@ Apart from Unity and the C\# programming language in which its scripts are writt
 
 
 \section{Implementation}
+\label{sec:implementation}
 
 \subsection{Mobile BVI-Acessible Soundscape Player Prototype}
+\label{ssec:mobile-implementation}
 
 \lipsum[1-5]
 
 \subsection{Desktop Beginner-Friendly Soundscape Editor}
+\label{ssec:desktop-implementation}
 
 \lipsum[1-5]
 
 \section{Initial Research \& Concept Refinement}
+\label{sec:initial-research}
 
 Prior to the system's technical implementation, conceptual designs of the mobile soundscape player and the desktop editor were produced in Figma, illustrating the key functionalities envisioned for each application. At this stage, the mobile application was identified as the main component to prove the concept, since it would directly serve BVI users.
 
-The first implementation efforts therefore focused on an early version of the mobile prototype, already including most of the features described in section 4.1.1. This build was sufficient to demonstrate the feasibility of the proposed concept for accessible and interactive interpretation of a painting, as was ultimately intended. However, compared to the final application it lacked ambient sound regulation, the proximity sensor, and haptic feedback, among several other adjustments - as these hadn't yet been planned at the time. Along with the mockups of the desktop editor, some of the mobile functionalities were presented in a remote meeting with researchers from the Department of Conservation and Restoration of NOVA School of Science and Technology. The researchers saw potential in the idea and expressed interest in its evolution.
+The first implementation efforts therefore focused on an early version of the mobile prototype, already including most of the features described in section~\ref{ssec:mobile-soundscape-player-overview}. This build was sufficient to demonstrate the feasibility of the proposed concept for accessible and interactive interpretation of a painting, as was ultimately intended. However, compared to the final application it lacked ambient sound regulation, the proximity sensor, and haptic feedback, among several other adjustments - as these hadn't yet been planned at the time. Along with the mockups of the desktop editor, some of the mobile functionalities were presented in a remote meeting with researchers from the Department of Conservation and Restoration of NOVA School of Science and Technology. The researchers saw potential in the idea and expressed interest in its evolution.
 
-The most important stage of this early phase came in late May, when the mobile prototype was tested on-site at the Raquel e Martin Sain Foundation - a social solidarity institution dedicated to the professional education and social integration of BVI individuals. Two blind participants volunteered their time: Cláudia Pires, a student at the foundation, and Ana Inês Colares, one of its instructors. Both of these interviews followed a simplified protocol with similarities to that of the final study but with less specific tasks and more open-ended questions, for the goal was refinement rather than evaluation. The painting "O Bosque Sagrado" by Maria Benamor was used as the painting for the test scenario, also being used in the final study of the application (section~\ref{sec:mobile-sonic-painting-exploration}).
+The most important stage of this early phase came in late May, when the mobile prototype was tested on-site at the Raquel e Martin Sain Foundation\footnote{https://www.fundacao-sain.pt/} - a social solidarity institution dedicated to the professional education and social integration of BVI individuals. Two blind participants volunteered their time: Cláudia Pires, a student at the foundation, and Ana Inês Colares, one of its instructors. Both of these interviews followed a simplified protocol with similarities to that of the final study but with less specific tasks and more open-ended questions, for the goal was refinement rather than evaluation. The painting "O Bosque Sagrado"~\cite{o-bosque-sagrado} by Maria Benamor was used as the painting for the test scenario, also being used in the final study of the application (section~\ref{sec:mobile-sonic-painting-exploration}).
 
 The first interviewee, Cláudia Pires, pointed to several areas for improvement in the experience. She felt that ambient sound should be lower and that the sound effects used for movement and rotation were too similar, sometimes hard to distinguish. Though she could discern sound direction clearly, perceiving proximity to the sound sources was more difficult. While she found the directional scanner useful, she noted that it required alignment that was much too precise, with narrations cutting off if not perfectly targeted. Cláudia also reported little difference between sequential and simultaneous reproduction modes and sometimes had difficulty tracking how many sounds were active. The clock hour orientation feature was very helpful to her but she stated that it should have been introduced earlier in the protocol. Finally, she strongly preferred the console scheme over the touch gestures, suggesting haptic feedback and larger virtual joysticks as possible improvements to touch usability.
 
