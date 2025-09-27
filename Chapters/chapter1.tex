@@ -1,29 +1,19 @@
-%!TEX root = ../template.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% chapter1.tex
-%% NOVA thesis document file
-%%
-%% Chapter with introduction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \typeout{NT FILE chapter1.tex}%
 
 \chapter{Introduction}
 \label{cha:introduction}
 
-% epigraph configuration
 \epigraphfontsize{\small\itshape}
 \setlength\epigraphwidth{12.5cm}
 \setlength\epigraphrule{0pt}
 
 \epigraph{
-  This chapter introduces the problems this dissertation addresses and establishes the motivation for exploring spatial audio as a tool to improve accessibility in art museums. It outlines the objectives of the research and the expected contributions and provides an overview of the proposed solution.
+  This chapter introduces the problems this dissertation addresses and establishes the motivation for exploring spatial audio as a tool to improve accessibility in art museums. It outlines the objectives of the research and provides an overview of the proposed solution, alongside its contributions.
 }
 
-In a colorful world filled with life and the most varied shapes and patterns,
-each of our five senses is vital in obtaining information about our surroundings~\cite{five-senses}. Out of these, vision is the most dominant, as about 80\% of what we learn about the world and the impressions we perceive are through our sight~\cite{vision-is-dominant-sense}. It is so valued that not only do 77\% of people state that it is their most important sense, but they would also rather live shorter lives than longer ones without their sight~\cite{sight-is-most-important-sense-1, sight-is-most-important-sense-2}.
+In a colorful world filled with life and the most varied shapes and patterns, each of our five senses is vital in obtaining information about our surroundings~\cite{five-senses}. Out of these, vision is the most dominant, as about 80\% of what we learn about the world and the impressions we perceive are through our sight~\cite{vision-is-dominant-sense}. It is so valued that not only do 77\% of people state that it is their most important sense, but they would also rather live shorter lives than longer ones without their sight~\cite{sight-is-most-important-sense-2,sight-is-most-important-sense-1}.
 
-Unfortunately, sight is not a universal given. According to the International Agency for the Prevention of Blindness Vision Atlas~\cite{global-estimates-of-vision-loss}, as of 2020, approximately 1.1 billion people worldwide were living with some form of vision loss. Over the last few decades, there has been a decrease in vision loss prevalence in proportion across the population. However, the absolute numbers have increased and are not dwindling anytime soon. On the contrary, vision loss is expected to grow across all categories, with projections indicating that by 2050, approximately 1.8 billion people worldwide will experience visual impairment~\cite{vision-loss-projections-2020-2050}, marking a 55\% increase in vision loss.
+Unfortunately, sight is not a universal given. According to the International Agency for the Prevention of Blindness Vision Atlas~\cite{global-estimates-of-vision-loss}, as of 2020, approximately 1.1 billion people worldwide were living with some form of vision loss. Over the last few decades, there has been a decrease in vision loss prevalence in proportion across the population. However, the absolute numbers have increased and will not be dwindling anytime soon. On the contrary, vision loss is expected to grow across all categories, with projections indicating that by 2050, approximately 1.8 billion people worldwide will experience visual impairment~\cite{vision-loss-projections-2020-2050}, marking a 55\% increase in vision loss.
 
 If inclusivity and disability rights alone are not enough motivation to care for this community, the World Health Organization~\cite{who-vision-impairment} states that everyone, if they live long enough, will experience some eye condition in their lifetime in need of proper care. As such, the concerns of the visually impaired community should in fact be everyone’s concerns as well.
 
@@ -47,7 +37,7 @@ While the accessibility methods employed at museums are valuable, these tend to 
 
 Spatial audio, haptics, \gls{VR}, \gls{AR} and other technological advancements have produced increasingly immersive experiences, creating opportunities for remote artistic appreciation~\cite{chang2024sound,li2024beyond,sanchez2007usability,yang2019audio}. People can experience art from the comfort of their homes or anyplace else thanks to digital platforms and virtual tours, which can dissolve physical constraints. This enables them to interact at their own pace and unshackle themselves from social tension despite the risk of less engagement than in person~\cite{how-museums-remove-barriers-for-bvi,li2023understanding}.
 
-The potential of virtual environments to provide a variety of interaction modalities and content has been thoroughly investigated, and sound-based approaches are especially important for blind and visually impaired people~\cite{sanchez2007usability,yang2019audio}. By mimicking environmental cues, spatial audio improves spatial orientation and makes it easier for users to move freely and independently in virtual environments, helping them experience virtual worlds~\cite{sanchez2007usability}. Frequently enhanced with \gls{3D} effects to improve spatial perception and experience, \gls{3D} audio improves navigation and immersive engagement in museum and gallery settings~\cite{yang2019audio}.
+The potential of virtual environments to provide a variety of interaction modalities and content has been thoroughly investigated, and sound-based approaches are especially important for blind and visually impaired people~\cite{sanchez2007usability,yang2019audio}. By mimicking environmental cues, spatial audio improves spatial orientation and makes it easier for users to move freely and independently in virtual environments, helping them experience virtual worlds~\cite{sanchez2007usability}.Frequently enhanced with \gls{3D} effects to improve spatial perception and experience, \gls{3D} audio improves navigation and immersive engagement in museum and gallery settings~\cite{yang2019audio}.
 
 Primarily supporting the above-mentioned technologies, the smartphone is a suitable vehicle for accessibility as about 54\% of the global population owns at least one~\cite{smartphone-stats}, and it is rich in accessibility features among several others~\cite{smartphone-features}. This study draws inspiration from several implementations of accessible technologies to develop a remote mobile and \gls{3D} sound-based solution that addresses \gls{BVI} visitors' informational and aesthetic needs.
 
@@ -56,32 +46,40 @@ Primarily supporting the above-mentioned technologies, the smartphone is a suita
 \section{Problem Description \& Objectives}
 \label{sec:objectives}
 
-As it was briefly alluded to in section~\ref{sec:motivation}, there are some limitations to the accessibility methods usually active at museums~\cite{candlin2003blindness,cavazos2021accessible,holloway2019making,rector2017eyes}. Tours and workshops directed at a BVI audience are infrequent and inconsistent, usually must be reserved in advance, and are usually only available on specific dates or time slots. Though more common in museums, audio descriptions are primarily designed with normovisual people in mind, mainly focusing on interpretation and historical context, not accessibility. Braille-based brochures leave much relevant information aside, and braille proficiency is generally low~\cite{cavazos2021accessible}.
+As briefly alluded to in section~\ref{sec:motivation}, there are some limitations to the accessibility methods usually active at museums~\cite{candlin2003blindness,cavazos2021accessible,holloway2019making,rector2017eyes}. Tours and workshops directed at a BVI audience are infrequent and inconsistent, usually must be reserved in advance and are only available on specific dates or time slots. Though more common in museums, audio descriptions are primarily designed with normovisual people in mind, mainly focusing on interpretation and historical context, not accessibility. Braille-based brochures leave much relevant information aside, and braille proficiency is generally low~\cite{cavazos2021accessible}.
 
 The preferred form of interaction with artwork for \gls{BVI} individuals seems to be the tactile approach since it allows them to feel the artwork up close and personal and sense its various features at a low level~\cite{krol2024design,li2023understanding}. However, high-level information about the piece is quite limited, and preservation efforts, intellectual access barriers, and the still prevalent visual centricity of exhibitions make these types of programs a rare occurrence among museums~\cite{li2023understanding}.
 
-Drawing inspiration from the use of spatial audio in other research and accessible games to convey space and emotion~\cite{ferreira2021creating,nair2021navstick,nair2022uncovering}, our approach focuses in assigning \gls{3D} sounds to specific elements of an artwork. The spatialized audio cues serve to aid \gls{BVI} users in navigating and interpret the scene. Museum curators are responsible for generating these sound environments, ensuring these accurately represent the art pieces.
-
-To facilitate this process, we propose a tool that allows museum curators to build a spatial audio environment representing art pieces. It is an intuitive and user-friendly \gls{3D} soundscape editor with support for immersive audio and interactivity, not requiring prior experience in sophisticated tools with a harsh learning curve. The generated environments are then made available via an Android mobile application, where \gls{BVI} visitors can navigate a simplified top-down map-like view of the scene with contrasting elements, using virtual thumb joysticks to define direction and movement. One such joystick is implemented as a directional scanner for precise exploration. With a smartphone coupled with headphones, \gls{BVI} users "move" within the environment and explore immersive \gls{3D} sound, simulating the experience of physically approaching or moving away from different parts of the artwork, using basic and familiar controls.
+Drawing inspiration from the use of spatial audio in other research and accessible games to convey space and emotion~\cite{ferreira2021creating,nair2021navstick,nair2022uncovering}, this dissertation's primary objective is to address the accessibility gaps left by the methods currently in place at museums, namely in what concerns the literal interpretation and aesthetic appreciation of paintings. To meet this ambitious goal, the developed system looks to enable BVI visitors in autonomously engaging with visual art through an assortment of non-visual means, particularly 3D audio stimuli and an intuitive set of \gls{SAT}s.
 
 
-\section{Expected Contributions}
+\section{Solution Overview and Contributions}
+\label{sec:overview-and-contributions}
 
-This research is expected to yield the following contributions:
+In pursuit of the objective delineated in section~\ref{sec:objectives}, the solution proposed in this dissertation comprises a bipartite system aiming to provide both BVI-inclusive soundscape interaction and intuitive creation of the auditory content to be interacted with. 
+
+The system's core component is a mobile application: an interactive and accessible soundscape player for BVI visitors, allowing them to navigate an auditory representation of a painting and learn about it through various sound effects, verbal descriptions, and customizable sound settings, assisted by carefully considered SATs. 
+
+Intended to supplement the mobile application, a desktop soundscape editor too is a part of the proposed solution, as the means by which content for the mobile application can be produced, supporting the end-to-end creation of auditory environments through a straightforward interface.  This tool is targeted at curators or art professionals without prior experience in sound design or programming.
+
+This dissertation's principal contributions are as follows:
 \begin{itemize}
-  \item An intuitive tool for creating and editing \gls{3D} auditory environments representing artwork. The tool will require no prior computer science or audio design expertise, and thus, can be used by museum curators to generate immersive auditory scenes. Curators may toggle between two modes within the application, the default one being development and the other emulating the scene's interactivity and navigation from a mobile end-user's perspective.
-  \item A mobile application enabling \gls{BVI} users to explore the generated artwork recreations through immersive audio and a directional scanning \gls{SAT}, providing an experience that is both aesthetic and informational while promoting independence with simple controls. It will feature a graphical interface with large high-contrasting elements, to properly accommodate users with residual sight.
-  \item A widely available approach to accessibility through the use of smartphones and headphones, allowing for both remote and on-site interaction with art.
+  \item A mobile prototype enabling \gls{BVI} users to explore highly interactive auditory recreations of artwork through immersive audio and several \gls{SAT}s, providing an experience that is both aesthetic and informational while promoting independence with simple controls;
+  \item A desktop editor prototype for creating auditory environments representing paintings, intuitive to curators or art professionals with no prior computer science or sound design expertise;
+  \item A widely available approach to BVI-accessibility through the use of smartphones and headphones, allowing for both remote and on-site interaction with art.
 \end{itemize}
 
 \section{Document Structure}
+\label{sec:document-structure}
 
-There are four main chapters to this document:
+There are six main chapters to this document:
 \begin{itemize}
-  \item \textbf{Chapter 1 - Introduction:} Introduces the problems this dissertation addresses and establishes the motivation for exploring spatial audio as a tool to improve accessibility in art museums. It outlines the objectives of the research and the expected contributions and provides an overview of the proposed solution.
-  \item \textbf{Chapter 2 - Background:} Presents the foundational concepts most relevant to understanding the work to be developed. It covers sound principles from its definition, perception, transmission, and spatial localization. Additionally, the definition and purpose of soundscapes are addressed, and most importantly, the role these play in accessibility for the blind and visually impaired.
-  \item \textbf{Chapter 3 - Related Work:} Reviews relevant research and applications mainly related to immersive spatial audio and \gls{BVI} accessibility, including technologies and approaches to address said accessibility. It is divided into sections, each focusing on a specific topic related to the dissertation's theme. Each section starts with a brief overview of related studies and projects displaying the current state of the art. It is then followed by subsections where projects of particular relevance to this dissertation are explored in detail, from implementation to findings, and finally, how they relate to our work and what is to be learned from them.
-  \item \textbf{Chapter 4 - Proposed Solution:} Provides a detailed overview of the proposed system and briefly exposes the solution's validation methodology. It also addresses the expected technological stack and the envisioned plan for the system's development. The work schedule is split into five distinct and concisely explained tasks mapped in a Gantt chart.
+  \item \textbf{Chapter~\ref{cha:introduction} - Introduction:} Introduces the problems this dissertation addresses and establishes the motivation for exploring spatial audio as a tool to improve accessibility in art museums. It outlines the objectives of the research and provides an overview of the proposed solution, alongside its contributions.
+  \item \textbf{Chapter~\ref{cha:background} - Background:} Presents the foundational concepts most relevant to understanding the work to be developed. It covers sound principles from its definition, perception, transmission, and spatial localization. Additionally, the definition and purpose of soundscapes are addressed, and most importantly, the role these play in accessibility for the blind and visually impaired.
+  \item \textbf{Chapter~\ref{cha:related-work} - Related Work:} Reviews relevant research and applications mainly related to immersive spatial audio and \gls{BVI} accessibility, including technologies and approaches to address said accessibility. It is divided into sections, each focusing on a specific topic related to the dissertation's theme. Each section starts with a brief overview of related studies and projects displaying the current state of the art. It is then followed by subsections where projects of particular relevance to this dissertation are explored in detail, from implementation to findings, and finally, how they relate to the current solution and what is to be learned from them.
+  \item \textbf{Chapter~\ref{cha:proposed-solution} - Proposed Solution:} Provides a detailed overview of the proposed system, introducing the BVI-inclusive mobile soundscape player and the soundscape editor for Windows. It also addresses the technological stack chosen for the solution's implementation, followed by a discussion on the implementation of both prototypes composing the system. An exploration of the initial research and refinement of the proposed concept concludes this chapter.
+  \item \textbf{Chapter~\ref{cha:evaluation-and-results} - Evaluation and Results:} Presents the evaluation of the two developed prototypes as their own distinct study and starts by outlining the methodology common to both. It then details the assessment of the mobile soundscape player with BVI participants, followed by the desktop soundscape editor with users inexperienced in sound design. Each study is generally described in terms of participant characterization, the tasks undertaken, and the main findings drawn from survey responses. A summary of the results of both studies concludes the chapter, discussing the extent to which the prototypes achieved their intended objectives.
+  \item \textbf{Chapter~\ref{cha:conclusion} - Conclusion:} Concludes the dissertation with a summary of the work developed throughout its course, revisiting the motivation, objectives and a synopsis of the proposed solution, outlining the features inspired by related work. Additionally, the system's shortcomings as well as its strengths are acknowledged via a discussion of the results of its two constituents. The chapter closes by envisioning the future of the developed system, contemplating further improvements and essential features.
 \end{itemize}
 
 \newcommand{\Overleaf}{Overleaf}

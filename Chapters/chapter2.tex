@@ -1,17 +1,8 @@
-%!TEX root = ../template.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% chapter2.tex
-%% NOVA thesis document file
-%%
-%% Chapter with the template manual
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \typeout{NT FILE chapter2.tex}%
 
 \chapter{Background}
 \label{cha:background}
 
-% epigraph configuration
 \epigraphfontsize{\small\itshape}
 \setlength\epigraphwidth{12.5cm}
 \setlength\epigraphrule{0pt}
@@ -67,7 +58,7 @@ As sound has no intrinsic spatial dimensions, how we perceive spatial cues is a 
 
 Most of our spatial perception heavily relies on our binaural hearing - our ability to interpret and locate what we hear from both ears. While monaural cues contribute to spatial hearing, namely for vertical localization and depth perception, the most important mechanisms for perceiving directional sound are binaural cues – used for localization in the horizontal plane, consisting of the interaural differences of time and intensity~\cite{spatial-audio-f-rumsey}. 
 
-Via these differences in signal reception between both ears, time and level are key physical properties that enable sound localization along the azimuthal plane and will be further addressed in section~\ref{ssec:interaural-differences}. Another important property is the sound’s spectral shape relevant for vertical localization, and it is impacted by interference phenomena such as reflection, diffraction, and absorption caused by a listener’s physical features~\cite{risoud2018sound}. These alterations are captured by a \gls{HRTF}, which we will delve into in section~\ref{ssec:hrtf}. 
+Via these differences in signal reception between both ears, time and level are key physical properties that enable sound localization along the azimuthal plane and will be further addressed in section~\ref{ssec:interaural-differences}. Another important property is the sound’s spectral shape relevant for vertical localization, and it is impacted by interference phenomena such as reflection, diffraction, and absorption caused by a listener’s physical features~\cite{risoud2018sound}. These alterations are captured by a \gls{HRTF}, which will be addressed in section~\ref{ssec:hrtf}. 
 Though not as much is known about perceiving the distance of a sound source, it is mainly influenced by the sound’s loudness and early reflections from nearby surfaces~\cite{fundamentals-of-hearing-w-yost}.
 
 
@@ -97,7 +88,7 @@ These mechanisms depend on the sound signal's nature and can be influenced by en
   The primary contributor to \gls{ILD}s is not proximity but the attenuation caused by the head’s sound shadow for high-frequency sounds. A higher frequency implies a shorter wavelength and a greater sound shadow, thus a more noticeable difference in level~\cite{fundamentals-of-hearing-w-yost}. 
   The same cannot be said for low frequencies, at which the head is not a decent barrier to sound~\cite{spatial-audio-f-rumsey}.
 \end{itemize}
-These mechanisms complement each other in providing fundamental cues for localizing sound sources in the azimuthal plane. However, these are not without limitations, some of which we will address in subsection~\ref{ssec:confusion-cone}.
+These mechanisms complement each other in providing fundamental cues for localizing sound sources in the azimuthal plane. However, these are not without limitations, some of which will be addressed in subsection~\ref{ssec:confusion-cone}.
 
 \subsection{The Cone Of Confusion}
 \label{ssec:confusion-cone}
@@ -113,7 +104,7 @@ Though the interaural differences are crucial and effective in locating sound al
 Any sound deriving from this cone’s circumference produces neither time nor level differences, while any sound coming from elsewhere inside the cone has at least one other point mirroring its interaural differences~\cite{risoud2018sound}. Every sound source location has its cone of confusion describing the other possible locations producing the same interaural differences~\cite{fundamentals-of-hearing-w-yost}.
 The most intuitive way to reduce this ambiguity is our natural head movements~\cite{risoud2018sound,spatial-audio-f-rumsey,fundamentals-of-hearing-w-yost}. Simply leaning our head or rotating it tears down the original cone of confusion by altering the \gls{ITD} and \gls{ILD} values, introducing additional binaural and spectral cues – enhancing localization. 
 
-If head movement is not an option, our auditory system relies on the spectral cues derived from the \gls{HRTF}s~\cite{risoud2018sound,fundamentals-of-hearing-w-yost} (we will address them in some detail in section~\ref{ssec:hrtf}), which are not only critical in determining the vertical direction of sound but also in distinguishing between the ambiguous sounds along the azimuthal plane~\cite{risoud2018sound}.
+If head movement is not an option, our auditory system relies on the spectral cues derived from the \gls{HRTF}s~\cite{risoud2018sound,fundamentals-of-hearing-w-yost} (will be addressed in some detail in section~\ref{ssec:hrtf}), which are not only critical in determining the vertical direction of sound but also in distinguishing between the ambiguous sounds along the azimuthal plane~\cite{risoud2018sound}.
 
 
 \subsection{Head Related Transfer Function}
@@ -150,18 +141,18 @@ Interacting with a soundscape yields distinct results for different individuals,
 
 The fidelity of a soundscape is mainly evaluated on how different sound sources are perceived and the level of noise present~\cite{dumyahn2011soundscape}. So, too, is its general quality evaluated on several descriptors, some of which being noise annoyance, pleasantness, and quietness~\cite{aletta2016soundscape}. 
 
-In the context of this dissertation, we are particularly interested in the role of the soundscape as an accessibility tool for \gls{BVI} individuals. Since their reliance on vision is limited, if any, they are not only more sensitive to auditory cues but can also draw more information from acoustic signals than sighted people~\cite{rychtarikova2012towards}. For these individuals, a high-fidelity soundscape is as functional as it is aesthetic since, from its acoustical information, they can derive information regarding the morphology and movement of objects. A fine example is rainfall, as it contours environmental elements, enhancing spatial awareness and connection to the environment~\cite{rychtarikova2012towards}.
+In the context of this dissertation, the role of the soundscape as an accessibility tool for \gls{BVI} individuals is of particular interest. Since their reliance on vision is limited, if any, they are not only more sensitive to auditory cues but can also draw more information from acoustic signals than sighted people~\cite{rychtarikova2012towards}. For these individuals, a high-fidelity soundscape is as functional as it is aesthetic since, from its acoustical information, they can derive information regarding the morphology and movement of objects. A fine example is rainfall, as it contours environmental elements, enhancing spatial awareness and connection to the environment~\cite{rychtarikova2012towards}.
 
 
 \section{Discussion}
 \label{sec:bg-discussion}
 
-This chapter aims to provide a structured understanding of sound, building up to sound localization, the most critical aspect of this dissertation. We start by laying the groundwork through concise overviews of the most fundamental concepts regarding sound, such as what it is and how humans perceive it(section~\ref{sec:what-is-sound}), and how it travels (section~\ref{sec:sound-propagation}).
+This chapter aims to provide a structured understanding of sound by building up to sound localization, the most critical aspect of this dissertation. It starts by laying the groundwork through concise overviews of the most fundamental concepts regarding sound, such as what it is and how humans perceive it (section~\ref{sec:what-is-sound}), and how it travels (section~\ref{sec:sound-propagation}).
 
-We then detail sound localization (section~\ref{sec:sound-localization}), introducing the three spatial dimensions where sound may be localized and exploring two techniques on which spatial audio heavily relies. Section~\ref{ssec:interaural-differences} covers the interaural differences of time and level, which are essential for the binaural determination of a sound source’s direction in the horizontal plane. Additionally, section~\ref{ssec:hrtf} explains the notion of \gls{HRTF}, its relevance for the monaural perception of \gls{3D} sound through spectral cues, and how it complements the interaural differences by resolving the cone of confusion (addressed in section~\ref{ssec:confusion-cone}). 
+Sound localization is then detailed in section~\ref{sec:sound-localization}, introducing the three spatial dimensions where sound may be localized and exploring two techniques on which spatial audio heavily relies. Section~\ref{ssec:interaural-differences} covers the interaural differences of time and level, which are essential for the binaural determination of a sound source’s direction in the horizontal plane. Additionally, section~\ref{ssec:hrtf} explains the notion of \gls{HRTF}, its relevance for the monaural perception of \gls{3D} sound through spectral cues, and how it complements the interaural differences by resolving the cone of confusion (addressed in section~\ref{ssec:confusion-cone}).
 
 The chapter closes on a less technical note. Section~\ref{sec:soundscape} focuses on the soundscape as a means to evoke meaning and a sense of atmosphere within an auditory environment, briefly touching on how it is useful for \gls{BVI} individuals.
 
-Chapter~\ref{cha:related-work} presents some studies related to our work where most, if not all, of the principles addressed were put into practice. In the research, we see the vast applications of sound within cultural settings and elsewhere, mainly studying its effectiveness in enhancing accessibility and engagement. \gls{3D} audio, interactive soundscapes and sound-based \gls{SAT}s are examples of such uses.
+Chapter~\ref{cha:related-work} presents some studies related to the current work where most, if not all, of the principles addressed were put into practice. In the research, the vast applications of sound within cultural settings and elsewhere are explored, mainly studying its effectiveness in enhancing accessibility and engagement. \gls{3D} audio, interactive soundscapes and sound-based \gls{SAT}s are examples of such uses.
 
-Informed by the implementation and findings of related studies, we incorporate the presented concepts into this thesis, with spatial audio standing at the core of our proposal. Employing the concepts of interaural differences and \gls{HRTF}s, we intend to non-visually convey the spatial characteristics of artworks through BVI-accessible interaction and exploration. In addition, we look to evoke emotional and aesthetic engagement beyond factual description, leveraging soundscape theory to this end.
+Informed by the implementation and findings of related studies, the presented concepts are incorporated into this thesis, with spatial audio standing at the core of the proposal. Employing the concepts of interaural differences and \gls{HRTF}s, the system is intended to non-visually convey the spatial characteristics of artworks through BVI-accessible interaction and exploration, and ultimately evoke emotional and aesthetic engagement beyond factual description.

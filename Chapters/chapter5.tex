@@ -1,25 +1,290 @@
-%!TEX root = ../template.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% chapter5.tex
-%% NOVA thesis document file
-%%
-%% Chapter with lots of dummy text
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \typeout{NT FILE chapter5.tex}%
 
-\chapter{Lorem Ipsum}
-\label{cha:lorem_ipsum}
+\chapter{Evaluation and Results}
+\label{cha:evaluation-and-results}
 
-\lipsum[1-100]
-\lipsum[1-100]
-\lipsum[1-100]
-% \lipsum[1-100]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
+\epigraph{
+  This chapter presents the evaluation of the two developed prototypes as their own distinct study and starts by outlining the methodology common to both. It then details the assessment of the mobile soundscape player with BVI participants, followed by the desktop soundscape editor with users inexperienced in sound design. Each study is generally described in terms of participant characterization, the tasks undertaken, and the main findings drawn from survey responses. A summary of the results of both studies concludes the chapter, discussing the extent to which the prototypes achieved their intended objectives.
+}{}
+
+\section{User Studies}
+\label{sec:user-studies}
+
+To evaluate the proposed system in its entirety, two final user studies were conducted, each corresponding to one of the two developed prototypes: the mobile soundscape player designed for BVI users, and the Windows-based soundscape editor intended for museum curators without prior experience in sound design. The objective of these studies was to assess not only the technical functionality of each application but also their usability, accessibility, and the overall adequacy of the implemented features for their respective target audiences.
+
+Despite addressing distinct user groups, both studies shared a common methodological structure. Each followed a predefined protocol specifying the study’s general objectives, the equipment to be used (all provided by the researcher) and the usage scenario. In both cases, the researcher’s assistance was deliberately minimal, limited to clarifying questions about controls or task instructions.
+
+Participants first completed a sequence of predefined tasks designed to cover the core functionalities of the respective application. Some tasks were highly specific, while others allowed for more freedom in execution. The focus of the tasks wasn't evaluation in and of itself, but rather a pratical introduction to the system's features and controls. This structured segment was followed by free-use optional sessions, during which participants could continue to interact with the system without constraints. These sessions aimed to familiarize the user further with the system, independently and at their own pace.
+
+At the end of each session, participants filled out a survey consisting mainly of Likert-scale items supplemented by open-ended qualitative questions. The closed questions gauged ease of use and functionality intuitiveness and adequacy. The open-ended questions allowed participants to share their general impressions, report difficulties, and suggest improvements. Comments and notable observations made during the testing sessions were also considered as part of the feedback.
+
+The focus of the two protocols diverged according to the nature of the application. For the mobile soundscape player, emphasis was placed on accessibility, immersion, and the ability to meaningfully interpret a painting through sound. For the desktop soundscape editor, the main focus was on comprehensibility and intuitiveness, specifically whether non-expert users could construct an expressive auditory representation of a painting without prior technical training.
+
+To guarantee anonymity, each participant was assigned a numerical identifier, which is how they will be referenced in the subsequent analysis. Participation in both studies was voluntary and uncompensated.
+
+
+\section{Mobile Sonic Painting Exploration}
+\label{sec:mobile-sonic-painting-exploration}
+
+The first study focused on the evaluation of the mobile soundscape player, which enables BVI users to autonomously explore a painting through auditory cues and several spatial awareness features. As outlined in section~\ref{sec:user-studies}, this study assessed the application for accessibility, immersion, and interpretability.
+
+All user testing sessions were conducted on-site at the Raquel e Martin Sain Foundation, as in the preliminary interview discussed in section~\ref{sec:initial-research}.
+Ana Inês Colares, an instructor at the foundation and also a former interviewee, provided the participants for this study and also the same fairly quiet room for all sessions. All tests took place in comparable conditions, with the same equipment and research protocol.
+
+The setup comprised a smartphone running the application, headphones, and a PlayStation 4 controller. This configuration supported the two distinct modes of interaction: a physical control scheme through the gamepad and touch-based controls on the device itself. The headphones were required for the perception of spatial sound. After a quick overview of the application, participants were first introduced to the system through a series of structured tasks using the PS4 controller. As they were not yet acclimated to the application or its controls, the tactile nature of the physical joystick and buttons was intended to give them an initial sense of stability, as they are yet learning the functionalities.
+
+The utilization scenario consisted of navigating a sonic representation of "O Bosque Sagrado", a painting by Maria Benamor, guiding participants to locate specific sound sources, regulate sounds and reproduction settings, and make use of several orientation aids. Following this exposure to the prototype's main features, the participants were encouraged to explore the soundscape more freely, initially continuing with the controller, and then transitioning to touch controls, so they could compare both input types. 
+
+The presented soundscape's content was developed by the research team (in this case, the author), rather than by art professionals, using sound clips available online for the scene elements and Google Cloud's text-to-speech for narrations. Participants were made aware of this ahead of the tasks, and were also informed that the soundscape itself was not being evaluated — only the application was.
+
+\subsection{User Characterization}
+\label{ssec:mobile-user-characterization}
+
+A total of eight participants took part in the main evaluation of the mobile soundscape player. None of them had been previously exposed to the application or its functionalities, ensuring that their feedback reflected first-time user impressions instead of familiarity. Table~\ref{tab:hla:mobile-user-characterization} characterizes the participants.
+
+Participants’ ages were relatively balanced across middle adulthood, ranging from 28 to 56 years old, for an average of 42.5 years.
+\bgroup
+\rowcolors{1}{}{GhostWhite}
+\begin{xltabular}{\textwidth}{Xccccc}
+  \caption{User characterization by identifier.}
+  \label{tab:hla:mobile-user-characterization}\\
+  \toprule
+  \rowcolor{Gainsboro}%
+  ID & Age & Gender & Degree of Vision \\
+  \midrule
+1 & 54 & Male & Low Vision \\
+2 & 41 & Male & Blind \\
+3 & 56 & Female & Blind \\
+4 & 37 & Female & Low Vision \\
+5 & 37 & Male & Blind \\
+6 & 36 & Female & Blind \\
+7 & 51 & Male & Blind \\
+8 & 28 & Male & Blind \\
+  \midrule
+  \end{xltabular}
+\egroup
+
+The group consisted of five male participants (62.5\%) and three female participants (37.5\%). In terms of visual condition, six participants (75\%) were blind and two participants (25\%) were classified as having low vision. Among the blind participants, some reported having lost their sight later in life rather than being blind from birth, which in some cases may have influenced the way they described their perception and interaction with auditory cues.
+
+When asked about their prior familiarity with joystick interfaces and gamepad controllers, most participants indicated that they were not accustomed to such devices. However, several noted that they had used them occasionally, most in the context of other user studies and a minority for gaming. This background might have influenced their degree of comfort with the PlayStation 4 controller used in the evaluation, as all participants were able to complete the required tasks with minimal guidance.
+
+\subsection{Task Overview}
+\label{ssec:mobile-task-overview}
+
+Participants were guided through a set of six tasks designed to gradually introduce the main features of the mobile soundscape player. As previously discussed in section~\ref{sec:user-studies}, these tasks were not conceived as a strict evaluation in themselves, but rather as a structured way of teaching participants how to use the system. These ensured that each participant could get comfortable with the core functionalities before moving on to the optional free exploration sessions.
+
+The set of tasks was intentionally varied: while some were highly specific (such as finding a particular sound source), others left some room for interpretation and exploration, allowing participants to interact with the environment at their own pace. During subsequent tasks, participants were encouraged to use previously learned functionalities, but were free to ignore them as well.
+
+Standing out from all six other tasks, Task 0 was exclusively intended for low-vision subjects, as it required a certain degree of residual vision to adjust the zoom level and toggle between different visual display modes. It was not presented to blind participants and actually carried little relevance even for those with low vision. Due to its optional character, it did not interfere with the main evaluation flow.
+
+Task 1 focused on basic movement and spatial perception, introducing participants to the joystick-based control of direction and rotation, while Task 2 expanded on this by training orientation with respect to the original alignment of the painting, using the clock-based narration system. Task 3 introduced the directional scanner and the global narration feature, allowing users to hear localized descriptions of individual elements or a full scene overview. Task 4 presented the proximity sensor, which mimicked a car parking sensor by giving intermittent auditory feedback as the user approached a sound source. Task 5 allowed participants to regulate the number of active sound sources and toggle ambient sound, introducing the idea of controlling auditory complexity. Finally, Task 6 exposed participants to the two available playback modes — simultaneous and sequential — focusing on how these modes altered the listening experience.
+
+These tasks served as a walkthrough of the application’s feature set, that prepared them for the optional free exploration sessions that followed.
+
+\subsection{Results Overview}
+\label{ssec:mobile-results-overview}
+
+The evaluation of the mobile soundscape player yielded encouraging results overall, with participants rating most of the features positively. It is important to note that the Likert items in the survey were phrased as declarative sentences, and scores reflect participants’ level of agreement with them (1 = strongly disagree, 5 = strongly agree). A higher score indicates only strong agreement with the statement, which may or may not correspond to a direct quality judgment depending on the item in question. The structured tasks served their purpose as a guided introduction to the system, while the subsequent exploration phases revealed both strengths and points for refinement.
+
+Task 0, which involved zoom and visual mode adjustments, was only presented to low-vision participants and, as anticipated, had little overall impact on the evaluation.
+
+In terms of navigation, participants generally felt quite able using the left joystick to move through the scene and orientating themselves via the clock system, as can be seen in figure~\ref{fig:navigation-and-orientation}. 
+Only participant 8 found himself neutral to the orientation feature's usefulness, with 38\% of participants scoring it highly and 50\% very highly. As for the movement and rotation via the left joystick, half of the participants were comfortable with these controls while the other half stated to be very comfortable. These results could in part be due to their experience with gamepads in other user studies, but even participants who had less previous exposure to such interfaces learned the movement controls very quickly.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{navigation-and-orientation}
+  \caption{Histogram of participant responses regarding navigation comfort and orientation.}
+  \label{fig:navigation-and-orientation}
+\end{figure}
+
+In what pertains to spatial awareness, the vast majority of users reported that they could clearly identify both the direction and proximity of sound sources. Figure~\ref{fig:spatial-awareness-features} displays the perceived efficacy of the implemented spatial awareness tools, as well as the overall perception of sound source direction and proximity.
+On average, clearness in direction and proximity were rated the same value - 4.1 out of 5. Aside from positive, this result is particularly interesting as in the early prototype's refinement study (section~\ref{sec:initial-research}), sound source direction had been considered significantly clearer than proximity. In the current application, that gap has apparently been bridged, likely due to the inclusion of the proximity sensor and adjustments to the sound elements in the scene.
+The said proximity sensor, which emitted increasingly frequent signals as users approached a sound source, was frequently classified as useful and intuitive. Similarly, the directional scanner allowed participants to identify specific objects in the painting with relative ease, by leaning their finger in the direction they want to listen in.
+Both functionalities were well received and close in ratings.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{spatial-awareness}
+  \caption{Histogram of participant responses regarding spatial awareness and related features.}
+  \label{fig:spatial-awareness-features}
+\end{figure} 
+
+Opinions were more divided regarding sound environment regulation, namely in whether ambient sound distracted from the localized elements of the painting. As can be seen in figure~\ref{fig:sound-environment-management}, half of the participants thought that it did, while the other half thought the opposite.
+Independent of their stance on ambient sound, all participants considered the ability to toggle it on or off indispensable, unanimously rating its usefulness a 5 out of 5. In addition, participants appreciated being able to adjust the number of active sound sources, indicating that the ability to manage the auditory scene's complexity was highly valued.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{sound-environment}
+  \caption{Histogram of participant responses regarding sound environment regulation.}
+  \label{fig:sound-environment-management}
+\end{figure} 
+
+Regarding the two available playback modes - simultaneous and sequential, participants felt both modes were distinct and impactful in their own way, but favored simultaneous reproduction by a fair margin, as illustrated in figure~\ref{fig:playback-modes}. 
+While sequential playback allowed some participants to focus more closely on the painting's individual elements, most felt that the simultaneous mode provided a greater sense of immersion. Participant 7, in particular, saw no purpose in the sequential reproduction mode, stating that a similar experience could be accomplished in the simultaneous mode by decreasing the number of active spatial sounds to one, and also felt that each sound source would play for too long sequentially. In contrast, participant 3 had no preference in mode, having enjoyed both equally. As preferences appear to depend on personal strategies for exploring the painting, offering both modes is valuable, even if one is considered the "better" one.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{reproduction-modes}
+  \caption{Histogram of participant responses regarding the two existing reproduction modes - simultaneous and sequential.}
+  \label{fig:playback-modes}
+\end{figure} 
+
+As for the application’s control schema (results illustrated in figure~\ref{fig:control-schemes}), console controls were rated very positively, with an average agreement of 4.6 out of 5 on their intuitiveness and ease of use. While the touch controls were also described as intuitive by the majority, the responses were less consistent, with an average score of 4.1 out of 5.
+Participant 2 rated the touch controls' intuitiveness a 2 out of 5, due to some difficulty with the swipe gestures and especially the position and size of the virtual joysticks. While the rest of the participants did not experience difficulties to this extent, they generally reported greater comfort and confidence with the physical controller, thus preferring this interface when asked to compare both input modes (3.75/5). However, the console scheme was not one-sidedly favored in this case, as 25\% of subjects actually preferred the touch controls and participant 1 appreciated both control schemes equally. The moderate success of the touch controls can in part be explained with the positive reception of the haptic feedback present in this schema, which may have compensated for the lack of tangible button-based physical interaction. The smartphone vibrations, triggered by collisions with the painting's borders or virtual joystick interactions, received an average score of 4 out of 5 in effectiveness. Though some users did point out that they would prefer these vibrations to be more intense.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{control-schemes}
+  \caption{Histogram of participant responses regarding the available control schemes - physical gamepad and touch.}
+  \label{fig:control-schemes}
+\end{figure} 
+
+The general reception of the application was highly positive, with participants strongly agreeing that the system provided an immersive and engaging with the painting (average score 4.4/5). Even more notably, they agreed that the set of available features allowed them to form a somewhat complete idea of the painting’s content and essence (4.6/5).
+
+Responses to open-ended questions reinforced the quantitative findings of the study, as several participants highlighted the immersion and stimulation of the experience, some also suggesting improvements. Out of the suggestions, that of participant 5 was a particularly interesting one - incorporating clock hour narration alongside the directional scanner's narrations, for further awareness assistance. As expected, most users commented on initial difficulties in orienting themselves within the scene but reported that these lessened with practice and with new spatial awareness tools being introduced. When asked about usage context, most felt the application would be most meaningful in a museum setting alongside the artwork, others couldn't choose between using it at a museum or remotely, and one participant preferred a fully remote interaction.
+
+The results of this study suggest that the application succeeded in delivering both an enjoyable and meaningful interpretation of the artwork, beyond the usability of individual functionalities - its potential acknowledged as both an independent exploration tool and a complement to in-person museum visits.
+
+\subsection{The Perspective of a Returning User}
+\label{ssec:mobile-perspective-of-returning-user}
+
+One of the two blind individuals who had previously taken part in the early prototype’s concept refinement sessions (addressed in section~\ref{sec:initial-research}), Cláudia Pires, returned to test the application in it's final state. With her participation came a unique perspective, as she was the only person in this evaluation with any prior exposure to the application, though this occurred a month and a half earlier and under a different protocol. For this reason, her results are considered separately from those of the other participants in section~\ref{ssec:mobile-results-overview}, who all experienced the system for the first time.
+
+The early prototype that Cláudia had tested already included most of the core functionalities, but lacked features such as the proximity sensor, toggleable ambient sound, and haptic feedback. Additionally, between versions the sensitivity of the directional scanner was adjusted, and the sound attributes of the test soundscape were slightly refined. The protocol of the earlier study was similar in structure to the final one, using the same painting and a comparable sequence of tasks, though these were less specific and accompanied only by qualitative questions. Consequently, some of the tasks in the final evaluation were familiar to her, while others introduced entirely new elements.
+
+Cláudia performed these final tasks with relative ease, quickly adapting to both the revised button bindings and touch gestures. She highlighted the improvements in the directional scanner's usability and especially the mobile touch controls, which she found more reactive and supported by proper haptic feedback. Cláudia's responses to the survey aligned with the positive trends observed in section~\ref{ssec:mobile-results-overview}, and emphasized the importance of iterative improvements, especially when coming from someone able to compare versions of the system.
+
+It is also important to acknowledge Ana Inês Colares, the other blind participant who had taken part in the early prototype study and also volunteered for the final study. Ultimately, she was unable to attend the final evaluation due to the researcher's time constraints. Nonetheless, her role was indispensable in supporting this stage of the research by greatly facilitating the recruitment of the BVI participants, essentially managing this process in its entirety.
+
+\section{Desktop Soundscape Creation}
+\label{sec:desktop-soundscape-creation}
+
+The second user study focused on the Windows-based soundscape editor, intended for museum curators without prior experience in sound design to build auditory representations of paintings in an intuitive manner. As stated in section~\ref{sec:user-studies}, the objective of this evaluation was to assess the tool’s usability and comprehensibility, but also to determine whether participants could successfully construct an immersive soundscape capable of conveying the essence of an artwork to BVI visitors.
+
+The evaluation followed a similar structured methodology to the one applied in the mobile prototype study (section~\ref{sec:mobile-sonic-painting-exploration}), with a sequence of tasks introducing participants to the editor’s main features, followed by a short free-use period and a survey. The utilization scenario paralleled that of the mobile application's study. Participants were tasked with creating a auditory environment of "O Bosque Sagrado" by Maria Benamor, essentially reconstructing the very same soundscape that BVI participants had explored within the mobile application.
+
+Most tests were carried out in person under similar controlled conditions, using the researcher’s equipment. Participant 13 was one single exception, who took part remotely while closely adhering to the established methodology. For this case, the application executable, media folder, and protocol were provided in advance, and the evaluation was conducted on the participant’s own computer via a Discord screen-sharing session.
+
+All participants used a computer running the application and headphones for reliable spatial sound reproduction when testing the created soundscape. For the convenience of the participants, all media files were prepared in advance and placed in a dedicated folder within the application’s directory. Though not required for the tool’s use, this allowed participants to concentrate on evaluating the editor itself rather than creating or searching for external media resources.
+
+
+
+\subsection{User Characterization}
+\label{ssec:desktop-user-characterization}
+
+Twenty participants took part in the evaluation of the desktop soundscape editor, none of whom had any previous exposure to the tool. Ideally, this study would have involved museum curators or professionals with backgrounds in art interpretation, the editor's target audience. However, due to time constraints and limited connections to such professionals, the participant pool consisted instead of volunteers without formal ties to the museum sector. Despite this limitation, the study provided valuable insights into the tool's usability and comprehensibility from the perspective of novice users.
+
+The group, caracterized in table~\ref{tab:hla:desktop-user-characterization}, was composed of fifteen male participants (75\%) and five female participants (25\%). The age distribution was quite narrow: 35\% participants were 22 years old and the remaining 65\% were 23 years old, resulting in an average age of 22.7 years.
+\bgroup
+\rowcolors{1}{}{GhostWhite}
+\begin{xltabular}{\textwidth}{Xccccc}
+  \caption{User characterization by identifier.}
+  \label{tab:hla:desktop-user-characterization}\\
+  \toprule
+  \rowcolor{Gainsboro}%
+  ID & Age & Gender & Experience in sound design \\
+  \midrule
+1 & 22 & Male & None  \\
+2 & 22 & Male & Intermediate  \\
+3 & 23 & Male & None  \\
+4 & 23 & Male & None  \\
+5 & 23 & Female & None  \\
+6 & 23 & Male & None  \\
+7 & 23 & Female & None  \\
+8 & 22 & Male & Beginner  \\
+9 & 23 & Male & Beginner  \\
+10 & 22 & Female & None \\
+11 & 23 & Female & None \\
+12 & 23 & Male & None \\
+13 & 23 & Male & None \\
+14 & 23 & Male & None \\
+15 & 22 & Male & None \\
+16 & 22 & Male & None \\
+17 & 23 & Male & Beginner \\
+18 & 23 & Male & None \\
+19 & 23 & Male & None \\
+20 & 22 & Female & None \\
+  \midrule
+  \end{xltabular}
+\egroup
+
+Regarding experience in sound design, 80\% of participants reported no prior background at all. 15\% of individuals identified themselves as beginners, and only participant 2 described their experience as intermediate - the most experienced user. Thus, the participant group was predominantly representative of non-specialist users, aligning with the audience for whom the editor was conceived.
+
+
+\subsection{Task Overview}
+\label{ssec:desktop-task-overview}
+
+Similar to the mobile study in section~\ref{ssec:mobile-task-overview}, participants were guided through six tasks that introduced the core functionalities of the desktop soundscape editor. Reinforcing what was stated in section~\ref{sec:user-studies}, these tasks acted as a structured tutorial to familiarize participants with the system’s interface and feature set, rather than strict evaluation measures in themselves. While tasks were highly specific in general and had clearly defined steps to follow, some allowed for a small degree of freedom, such as experimenting with sound attributes or engaging with the interactive mode.
+
+Task 1 consisted in importing the background painting into the scene, followed by adjusting the grid system used to place, remove and edit scene elements (Task 2). In Task 3, participants used the grid to place the main components of the soundscape: ambient sounds, spatial sounds, and a player starting point. In the most laborious task, Task 4, users edited all existing elements by assigning audio files, adjusting several audio attributes, defining volume attenuation ranges, and setting player properties such as initial orientation and movement speed. Task 5 consisted only in defining a global narration track for the scene, while Task 6 transitioned participants into the interactive mode, allowing them to simulate and test the soundscape they had just created.
+
+This set of tasks exposed participants to a complete workflow of the editor: from constructing and refining a soundscape to finally experiencing it in an interactive preview. With this, participants developed a reasonable and functional understanding of the system in preparation for the optional free-use session that followed.
+
+\subsection{Results Overview}
+\label{ssec:desktop-results-overview}
+
+The evaluation of the soundscape editor produced encouraging results, with participants generally finding the tool intuitive and effective for creating detailed auditory scenes. As with the mobile study's survey (addressed in section~\ref{ssec:mobile-results-overview}), the survey's Likert-scale items were phrased as statements, scored by level of endorsement (1 = strongly disagree, 5 = strongly agree).
+
+As shown in figure~\ref{fig:initial-setup}, in terms of basic operations, such as importing the background painting and setting a global narration, participants strongly agreed that these were straightforward, with average agreeability scores nearing 5 for both of these functionalities. Comfortability adjusting the grid’s cell size and line thickness was similarly rated, a 4.8. In addition, with an average score of 4.6 out of 5, the available element types (ambient sounds, spatial sounds, and player entity) were generally considered sufficient to adequately represent the painting.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{initial-setup}
+  \caption{Histogram of participant responses regarding setting up the background painting, global narration and initial setup.}
+  \label{fig:initial-setup}
+\end{figure}
+
+As can be seen in figure~\ref{fig:placement-system}, participants expressed confidence in the clarity and intuitiveness of the implemented placement system, with an average score of 4.1 and editing operations generally perceived as simple and comprehensible. However, participant 12 rated the statement a 2, possibly due to his reported difficulties in choosing audio and narration files when editing the elements. The grid system was considered extremely easy to use by 85\% of participants, with an average score of 4.8. Well received as it was, 40\% of participants were undecided on whether the system in place was more intuitive and suitable for soundscape creation than alternatives such as drag-and-drop and point-and-click. 10\% of users had a preference for these alternative interaction models, while the remaining 50\% preferred the current grid system.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{placement-system}
+  \caption{Histogram of participant responses regarding the current grid-like placement system.}
+  \label{fig:placement-system}
+\end{figure} 
+
+When asked about the adequacy of editing options (responses shown in figure~\ref{fig:element-editing}), participants agreed that the configurable properties of ambient sounds, spatial sounds, and player attributes were sufficient to represent the desired soundscape, all with an average agreeability score equal to or over 4.5/5. Additionally, the available sound editing options were considered very comprehensible, also with a rating of 4.5, suggesting an appropriate balance between simplicity and expressiveness.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{element-editing}
+  \caption{Histogram of participant responses regarding the editing options for the existing element types.}
+  \label{fig:element-editing}
+\end{figure} 
+
+Participants responded very positively to the editor's two modes - development and interactive - as one can observe in figure~\ref{fig:modes-of-interaction}. With an average score of 5, alternating between modes was classified as extremely quick and intuitive by every participant. Furthermore, their distinct purposes were clearly understood and participants felt capable of effectively emulating and testing the soundscape in interactive mode, having created it within the development mode. Both previous statements were similarly rated and nearing an agreement score of 5, confirming the application's suitability for both soundscape construction and its validation.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{modes-of-interaction}
+  \caption{Histogram of participant responses regarding the two existing modes of interaction.}
+  \label{fig:modes-of-interaction}
+\end{figure} 
+
+According to figure~\ref{fig:help-button}, only 35\% of participants did not feel the absence of a help button. While 20\% of users were indifferent, the remaining 45\% stated a need for a help button, claiming that it would have been useful to clarify doubts on demand, despite generally completing the tasks successfully without it.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{help-button}
+  \caption{Histogram of participant responses regarding the need for a help button.}
+  \label{fig:help-button}
+\end{figure}
+
+Lastly, as displayed in figure~\ref{fig:overall-use-experience}, participants strongly considered the editor to be expressive, allowing for the creation of a detailed and immersive representation of "O Bosque Sagrado" (average score 4.6/5). They also described the experience of creation itself as both intuitive and pleasant, rating it an average of 4.8 out of 5.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{overall-use-experience}
+  \caption{Histogram of participant responses regarding the overall user experience.}
+  \label{fig:overall-use-experience}
+\end{figure}
+
+From the responses to the open-ended questions, derived the most common points for improvement, which included:
+\begin{itemize}
+  \item clearer button tooltips, since not all functionalities were implicitely self-explanatory;
+  \item a visible submit/OK button in editing popups, as some participants were uncertain whether changes had been applied;
+  \item an audio preview option within editing popups, to immediately hear the effect of adjustments;
+  \item the ability for most buttons to function as toggles (activating and deactivating features with the same control);
+  \item support for moving already placed elements rather than having to delete and recreate them;
+  \item \gls{QoL} enhancements, such as a visual indication of edited elements, preventing spatial sound popups from closing after adjusting volume rollof and support for editing multiple elements simultaneously.
+\end{itemize}
+The findings of this study confirm that the desktop editor meets its central goals of simplicity and effectiveness for users without former sound design experience, producing an interactive and immersive soundscape equivalent to the one presented to BVI individuals in section~\ref{sec:mobile-sonic-painting-exploration}. Most importantly, these results shed light on a clear set of refinements that could further improve the experience for all of its users.
+
+\section{Summary}
+\label{sec:summary}
+
+Taking together the results of both sections~\ref{ssec:mobile-results-overview} and~\ref{ssec:desktop-results-overview}, the two prototypes achieved their intended goals, with clear potential for further improvement. The mobile soundscape player effectively enabled BVI participants to autonomously explore and interpret a painting through audio stimuli - be it sound effects or narrations, movement within the painting and SATs. Besides valuing the accessibility features and sound regulation options, the participants reported a strong sense of immersion, also feeling a solid grasp over the painting's content and essence. Although the console controls were generally preferred over touch gestures, the mobile interface was also considered broadly accessible, likely due to the inclusion of haptic feedback and some gestures somewhat resembling the physical gamepad's bindings.
+
+In turn, the desktop soundscape editor was found intuitive and comprehensible for users with little or no prior experience in sound design. Users were able to construct a complete and immersive soundscape of "O Bosque Sagrado" with ease, mostly appreciating the editor’s grid system, editing options, and dual development and interactive modes. The absence of a help feature was the most common limitation identified, along with several smaller usability and \gls{QoL} improvements.
+
+These studies confirmed the viability of both components of the proposed system. While the editor empowered curators to create expressive auditory representations of artworks, the mobile application allowed BVI individuals to engage with these representations in a manner that was both immersive and accessible.
