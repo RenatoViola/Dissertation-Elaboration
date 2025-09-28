@@ -13,7 +13,7 @@
 The solution proposed in this dissertation is a bipartite system intended to, above all, facilitate BVI-inclusive interpretation of visual paintings, via immersive and highly interactive soundscapes based on museum paintings. While clearly distinct in purpose and also in the audience they serve, these two allied parts provide both soundscape interaction and intuitive creation. Figure~\ref{fig:concept-img} attempts to illustrate the intended approach from a purely conceptual standpoint.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{concept-cropped}
+  \includegraphics[width=0.8\linewidth]{concept-cropped}
   \caption{Concept representation. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
   \label{fig:concept-img}
 \end{figure}
@@ -27,11 +27,11 @@ The following two sections detail these components further, starting by the mobi
 \subsection{Mobile Soundscape Player}
 \label{ssec:mobile-soundscape-player-overview}
 
-The mobile application's interface (portrayed in figure~\ref{fig:mobile-overview-interface}) displays a top-down \gls{2D} representation of a soundscape, with large and high-contrasting elements representing directional sound sources, making them easier to distinguish within the environment. This approach makes use of standard \gls{BVI} accessibility practices for visual interfaces in other research~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo} and having spatial sounds assigned to points of interest in the painting was inspired by Yang et al.'s~\cite{yang2019audio} study. Ambient sound sources are also present but permanently hidden to prevent users with partial sight from misinterpreting them for localized sounds. The user’s head and ears are represented in the scene by a small arrow that always faces upwards on the screen, regardless of the user’s orientation within the virtual space.
+The mobile application's interface (portrayed in figure~\ref{fig:mobile-overview-interface}) displays a top-down \gls{2D} representation of a soundscape, with large and high-contrasting elements representing directional sound sources, making them easier to distinguish within the environment. This approach makes use of standard \gls{BVI} accessibility practices for visual interfaces in other research~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo} and having spatial sounds assigned to points of interest in the painting was inspired by Yang et al.'s~\cite{yang2019audio} study. Ambient sound sources are also present but permanently hidden to prevent users with partial sight from misinterpreting them for localized sounds. The user's head and ears are represented in the scene by a small arrow that always faces upwards on the screen, regardless of the user's orientation within the virtual space.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{placeholder}
-  \caption{The three available display modes of the mobile prototype, in the order of: Immersive, Accessible and Minimalist.}
+  \includegraphics[width=1.0\linewidth]{mobile-display-modes}
+  \caption{The three available display modes of the mobile prototype: Immersive, Accessible and Minimalist.}
   \label{fig:mobile-overview-interface}
 \end{figure}
 
@@ -51,7 +51,7 @@ The left joystick controls the user’s movement within the painting: vertical t
 The right joystick acts as a directional scanner akin to to Nair et al.'s~\cite{nair2021navstick} NavStick, though in \gls{2D} rather than in \gls{3D}. By tilting the joystick in a particular direction, the user can hear a localized narration of the first object in their line of sight, through a predefined speech output. Figure~\ref{fig:mobile-overview-joystick} exemplifies this scanner in practical use. To assist with a more literal interpretation of the environment, a global verbal description of the entire scene can be triggered, during which all spatial sounds pause and then resume once the narration finishes. The idea of using blocking sounds (narrations) and interruptible sounds (spatial sounds in this particular case) was inspired by Drossos et al.'s~\cite{drossos2015accessible} implementation of a BVI-accessible Tic-Tac-Toe game.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{placeholder}
+  \includegraphics[width=1.0\linewidth]{scanner-detection}
   \caption{Directional scanner in use: on the left the scanner has not detected an element while on the right it has detected a spatial sound source and narrates it.}
   \label{fig:mobile-overview-joystick}
 \end{figure}
@@ -75,7 +75,7 @@ The workflow within the application is divided into two main modes: Development 
 In Development mode (exposed in figure~\ref{fig:desktop-editor-development-mode}), users begin by selecting a painting (via the file browser), which is displayed as a background image in the scene. Zoom level is automatically adjusted to ensure the image appropriately fits the screen, and the user may further zoom in or out to taste. Setting a global narration to represent the artwork is executed identically to defining the background image. Placement, editing and removal of elements in the scene is done via a simple grid-based building system reminiscent of city builder games, but in 2D. This rectangular grid layout dinamically fits to the painting's dimensions and is customizable in both the size of its cells and the thickness of its lines, overlaying the painting when enabled.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{placeholder}
+  \includegraphics[width=0.9\linewidth]{development-mode}
   \caption{Development mode. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado})}
   \label{fig:desktop-editor-development-mode}
 \end{figure}
@@ -86,18 +86,25 @@ With the painting set, curators may place elements in the grid, of which there a
   \item \textbf{Player:} Represents the person exploring the scene and acts as the controller for movement and hearing within it. This element's position in the grid determines the end user's initial position. Its customizable attributes are: \textit{initial clockhour orientation, movement speed and proximity sensor settings, in which the amplitude of the detection cone is included}.
 \end{itemize}
 
-The grid remains visible only when adjusting its properties or when active for placing, editing, or removing elements and can be closed via a button in the lower left corner, which only appears when the grid is enabled. Placing an element consists only on having it actively selected and clicking on an empty grid cell to place it, and no cell can have more than one element assigned to it. Editing and removing elements work function identically except that a cell must already have an element to be valid to act upon. When editing an element (see figure~\ref{fig:desktop-editor-editing-popups}), changes are persisted automatically rather than via an explicit submit button. Additionally, the radiuses of volume rollof in spatial sound elements and proximity definition in the player element's sensor are visualizable in the grid layout via overlapping circles of decreasing opacity.
+The grid remains visible only when adjusting its properties or when active for placing, editing, or removing elements and can be closed via a button in the lower left corner, which only appears when the grid is enabled. Placing an element consists only on having it actively selected and clicking on an empty grid cell to place it, and no cell can have more than one element assigned to it. Editing and removing elements work function identically except that a cell must already have an element to be valid to act upon. When editing an element (see figure~\ref{fig:desktop-editor-editing-popups}), changes are persisted automatically rather than via an explicit submit button. Additionally, the radiuses of volume rollof in spatial sound elements and proximity definition in the player element's sensor are visualizable in the grid layout via overlapping circles of decreasing opacity, as can be seen in figure~\ref{fig:desktop-editor-sensor-radius}.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{placeholder}
-  \caption{Editing popups for a spatial sound element and the player element. The rightmost image represents the reach of the proximity sensor.}
+  \includegraphics[width=0.9\linewidth]{sound-popups}
+  \caption{Editing popup windows for a ambient sound element on the left, and a spatial sound element on the right.}
   \label{fig:desktop-editor-editing-popups}
 \end{figure}
 
-When users want to preview the soundscape they devised as it will be made available to the visitor audience, they should use headphones for accurate spatial sound perception and enter Interactive mode. This mode effectively emulates the mobile application covered in section~\ref{ssec:mobile-soundscape-player-overview}: they may move around and scan the scene with the virtual joysticks in the lower corners of the screen and use every functionality available in the mobile application, but trigger them through buttons rather than touch gestures. At any time, users may return to Development mode, easily alternating between the two.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\linewidth]{placeholder}
+  \includegraphics[width=1.0\linewidth]{sensor-radius}
+  \caption{Editing popup of the player element on the left. The rightmost image allows the customization of the proximity sensor's reach and varying frequency areas.}
+  \label{fig:desktop-editor-sensor-radius}
+\end{figure}
+
+When users want to preview the soundscape they devised as it will be made available to the visitor audience, they should use headphones for accurate spatial sound perception and enter Interactive mode (figure~\ref{fig:desktop-editor-interactive-mode}). This mode effectively emulates the mobile application covered in section~\ref{ssec:mobile-soundscape-player-overview}: they may move around and scan the scene with the virtual joysticks in the lower corners of the screen and use every functionality available in the mobile application, but trigger them through buttons rather than touch gestures. At any time, users may return to Development mode, easily alternating between the two.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{interactive-mode}
   \caption{Interactive mode.}
   \label{fig:desktop-editor-interactive-mode}
 \end{figure}
