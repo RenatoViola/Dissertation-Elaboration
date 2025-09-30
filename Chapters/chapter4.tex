@@ -10,12 +10,18 @@
 \section{Proposal Overview}
 \label{sec:proposal-overview}
 
-The solution proposed in this dissertation is a bipartite system intended to, above all, facilitate BVI-inclusive interpretation of visual paintings, via immersive and highly interactive soundscapes based on museum paintings. While clearly distinct in purpose and also in the audience they serve, these two allied parts provide both soundscape interaction and intuitive creation. Figure~\ref{fig:concept-img} attempts to illustrate the intended approach from a purely conceptual standpoint.
+The solution proposed in this dissertation is a bipartite system intended to, above all, facilitate BVI-inclusive interpretation of visual paintings, via immersive and highly interactive soundscapes based on museum paintings. While clearly distinct in purpose and also in the audience they serve, these two allied parts provide both soundscape interaction and intuitive creation. Figure~\ref{fig:concept-img} attempts to illustrate the intended approach from a purely conceptual standpoint, while figure~\ref{fig:system-architecture} displays a high-level view of the system's architecture. The solution's most relevant shortcomings are addressed in section~\ref{sec:system-limitations}.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1\linewidth]{concept-cropped}
-  \caption{Concept representation. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
+  \caption{Representation of the proposed interaction. Background image is \textit{O Bosque Sagrado} by Maria Benamor, 1975. Collection of Museu Nacional Gr\~ao Vasco. (Adapted from~\cite{o-bosque-sagrado}).}
   \label{fig:concept-img}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{system-architecture}
+  \caption{Conceptual system architecture. \textit{Disclaimer: The current editor prototype does not currently support exportation of the devised scenes, though it was initially intended.}}
+  \label{fig:system-architecture}
 \end{figure}
 
 The first and ultimately core component is a mobile application, which serves as an interactive and accessible soundscape player for BVI visitors. Through its available SATs, the application serves as a vehicle for users to autonomously navigate the artwork and learn about it or even feel it, via various sound effects (be it ambience or localized sound), verbal descriptions and customizable sound settings, among other considerations.
@@ -27,7 +33,7 @@ The following two sections detail these components further, starting by the mobi
 \subsection{Mobile Soundscape Player}
 \label{ssec:mobile-soundscape-player-overview}
 
-The mobile application's interface (portrayed in figure~\ref{fig:mobile-overview-interface}) displays a top-down \gls{2D} representation of a soundscape, with large and high-contrasting elements representing directional sound sources, making them easier to distinguish within the environment. This approach makes use of standard \gls{BVI} accessibility practices for visual interfaces in other research~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo} with spatial sounds assigned to points of interest in the painting~\cite{yang2019audio}. Ambient sound sources are also present but permanently hidden to prevent users with partial sight from misinterpreting them for localized sounds. The user's head and ears are represented in the scene by a small arrow that always faces upwards on the screen, regardless of the user's orientation within the virtual space, as in a typical videogame minimap.
+The mobile application's interface (portrayed in figure~\ref{fig:mobile-overview-interface}) displays a \gls{2D} representation of a soundscape, with large and high-contrasting icons representing directional sound sources, making them easier to distinguish within the environment. This approach makes use of standard \gls{BVI} accessibility practices for visual interfaces in other research~\cite{ahmetovic2021musa,drossos2015accessible,simao2018jogo} with spatial sounds assigned to points of interest in the painting~\cite{yang2019audio}. Ambient sound sources are also present but their icons are permanently hidden to prevent users with partial sight from misinterpreting them for localized sound sources associated to elements of the actual painting. The user's head and ears are represented in the scene by a small arrow that always faces upwards on the screen, regardless of the user's orientation within the virtual space, as in a typical videogame minimap.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1.0\linewidth]{mobile-display-modes}
@@ -68,7 +74,7 @@ Drawing inspiration from Ferreira’s~\cite{ferreira2021creating} Immerscape, th
 
 The editor is designed to minimize complexity for curators by enabling interaction primarily through the mouse. All file management, such as choosing a painting image and selecting audio files is handled by means of an versatile file browser which allows users to organize and fetch media resources from wherever in the desktop they see fit.
 
-Initially, the application was meant to be much more similar to Immerscape than it currently is, featuring a 3D development environment with predefined acoustic properties like reverberation and resonance, alongside a block-based placement system similar to Minecraft\footnote{\url{https://www.minecraft.net/en-us}}’s creative mode. However, during the mockup elaboration stage (mockups can be viewed in section~\ref{app:mockup-desktop}), it was concluded that in the context of BVI accessibility, introducing additional complexity to the scene in the form of acoustic properties, like reverberation and resonance, could bring about uneccessary complexity and cognitive overload. Most importantly, enforcing a 3D development environment could be cumbersome and time-consuming for curators, who would be required to interpret and translate a 2D painting into a 3D auditory environment faithfully embodying the artwork. As a result, the decision was made to simplify the development system and have it be in 2D with a grid-based placement system in place, reducing cognitive strain while retaining the two-dimensional essence of the original painting.
+Initially, the application was meant to be much more similar to Immerscape than it currently is, featuring a 3D development environment with predefined acoustic properties like reverberation and resonance, alongside a block-based placement system similar to Minecraft\footnote{\url{https://www.minecraft.net/en-us}}’s creative mode. However, during the mockup elaboration stage (mockups can be viewed in section~\ref{app:mockup-desktop}), it was conjectured that in the context of BVI accessibility, introducing additional complexity to the scene in the form of acoustic properties, like reverberation and resonance, could bring about uneccessary complexity and cognitive overload. Most importantly, enforcing a 3D development environment could be cumbersome and time-consuming for curators, who would be required to interpret and translate a 2D painting into a 3D auditory environment faithfully embodying the artwork. As a result, the decision was made to simplify the development system and have it be in 2D with a grid-based placement system in place, reducing cognitive strain while retaining the two-dimensional essence of the original painting.
 
 The workflow within the application is divided into two main modes: Development mode and Interactive mode. As a quick introduction, it is in Development mode that curators may design the soundscape, while Interactive Mode provides a built-in interactive preview of the devised soundscape, simulating how it would be experienced by the end user in the mobile application.
 
@@ -170,9 +176,91 @@ Essentially acting as the user's head and ears within the auditory environment, 
 
 The prefabs of both ambient and spatial sound sources have attached audio source components to play their respective sound effects. While ambient sounds are not localized at all, the effects produced by spatial sources are fully directional and binaurally rendered with a Steam Audio Source component. Each spatial sound object also contains a separate Steam Audio localized audio source to play its corresponding verbal description when detected by the directional scanner.
 
-The directional scanner functions by casting a ray in the direction of the right joystick's input and checking for a collision with a spatial sound source, triggering a localized narration from a detected source and blocking the sound effects from all other spatial elements while the narration is ongoing. Detections are also visually indicated in the scanner's cone, whose color becomes more intense through increased opaqueness.
+The directional scanner functions by casting a ray in the direction of the right joystick's input and checking for a collision with a spatial sound source, triggering a localized narration from a detected source and blocking the sound effects from all other spatial elements while the narration is ongoing. Detections are also visually indicated in the scanner's cone, whose color becomes more intense through increased opaqueness. Listing~\ref{lst:scanner} presents the method in charge of this functionality.
+\begin{lstlisting}[style=csharp, caption={Main method for implementing the scanner functionality in C\#.}, label={lst:scanner}]
+private void HandleScanner(Vector2 scannerInput)
+{
+	// Determine the direction in which to scan, relative to the player's orientation
+	Vector2 scanDirection = scannerInput.x * transform.right + scannerInput.y * transform.up;
+	// Rotate visual to match scan direction
+	float angle = Mathf.Atan2(scanDirection.y, scanDirection.x) * Mathf.Rad2Deg;
+	// Visual sprite is pointing to Y+, Atan gives angle from X+ to the vector
+	// Sprite is rotated 90 degrees from the right, compensate by rotating back 90 degrees
+	scannerVisual.rotation = Quaternion.Euler(0, 0, angle - 90f);
+	
+	// Cast a ray in the scanned direction
+	RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, scanDirection, _raycastDistance, layerMask);
+	if (raycastHit2D.collider is not null)
+	{
+		// Hit something
+		if (_lastCollider is null || _lastCollider != raycastHit2D.collider)
+		{
+			// Check if the collider is a SpatialSoundSource
+			if (raycastHit2D.collider.TryGetComponent(out SpatialSoundSource spatialSoundSource))
+			{
+				// Set lastCollider to the new collider
+				_lastCollider = raycastHit2D.collider;
+				// Set lastSpatialSoundSource to the new spatial sound source
+				_lastSpatialSoundSource = spatialSoundSource;
+				// Trigger the source's narration
+				spatialSoundSource.StartNarration();
+			}
+		}
+	}
+	else
+	{
+		// Set lastCollider to null if we are not hitting anything
+		_lastCollider = null;
+	}
+}
+\end{lstlisting}
 
-When activated and if there are active spatial sound sources in range, the proximity sensor monitors in real time the closest spatial element within a forward-facing cone with a default amplitude of 90 degrees. The sensor estimates the frequency at which source-localized beeps are emitted according to the distance between the player and the detected source. The lesser this distance, the higher the beeping frequency - indicating frontal proximity to a point of interest, as intended.
+When activated and if there are active spatial sound sources in range, the proximity sensor monitors in real time the closest spatial element within a forward-facing cone with a default amplitude of 90 degrees. The sensor estimates the frequency at which source-localized beeps are emitted according to the distance between the player and the detected source. The lesser this distance, the higher the beeping frequency - indicating frontal proximity to a point of interest, as intended. Listing~\ref{lst:sensor} presents the implementation of the two most relevant methods handling this feature.
+\begin{lstlisting}[style=csharp, caption={The two main methods for implementing the proximity sensor in C\#.}, label={lst:sensor}]
+private void HandleProximitySensor()
+{
+	// Find the nearest sound source within the cone
+	SetCurrentTargetWithinCone();
+	// Only proceed if there is a current target
+	if (_currentTarget is null) return;
+	// Determine the beep interval based on distance
+	DetermineBeepInterval();
+	// Handle the beep timer
+	HandleBeepTimer();
+}
+
+private void SetCurrentTargetWithinCone()
+{
+	// Get the closest active spatial sound source within the forward cone 
+	SpatialSoundSource nearestInCone = SoundSourceManager.Instance.GetSpatialSoundSourcesSortedByDistance(transform.position)
+		.Where(source => 
+		{
+			// Check if the source is not null and is currently playing
+			if (source == null || !source.IsPlaying()) return false;
+			// Check if the source is within the maximum distance (this transform shares the player's position)
+			float distance = Vector3.Distance(transform.position, source.transform.position);
+			if (distance > _farThreshold) return false;
+			// Calculate the angle between the player's forward direction and the direction to the sound source
+			Vector3 directionToSource = source.transform.position - transform.position;
+			float angle = Vector3.Angle(transform.up, directionToSource);
+			// Check if the angle is within the forward half-angle
+			return angle <= _forwardHalfAngle;
+		})
+		.FirstOrDefault();
+
+	if (nearestInCone is not null)
+	{
+		// If a target is found within the cone, set it as the current target
+		_currentTarget = nearestInCone.transform;
+	}
+	else
+	{
+		// If no target is found within the cone, set the current target to null and reset the timer
+		_currentTarget = null;
+		_timer = 0f;
+	}
+}
+\end{lstlisting}
 
 Touch gesture detection was explicitly programmed from the ground up using the EnhancedTouch library (from Unity's Input System package) which provided essential data such as the number of fingers touching the screen, their screen position and even phase of touch, among other attributes. Such information facilitated a proper implementation of the single and multi-fingered motions available in the application. The same Input System Package was utilized to easily support gamepad controls.
 
@@ -182,14 +270,64 @@ Using the aforementioned HapticFeedback library (in section~\ref{sec:technologic
 \subsection{Desktop Beginner-Friendly Soundscape Editor}
 \label{ssec:desktop-implementation}
 
-The desktop editor mostly shares the mobile application's separation of responsibilities into manager classes and MonoBehaviour services, also inheriting its primarily event-driven design to avoid unnecessary interdependencies between components. As in the mobile solution, prefabs for the player, ambient and spatial sound sources are stored in scriptable objects. However, unlike the mobile version, these prefab elements are merely visual, with no associated inner logic in development mode. Instead, information regarding a placed element is mapped to the grid cell it resides in, rather than being tied to the game object itself, making it so that the grid is fully responsible for storing the content of its elements and providing it to other parts of the system.
+The desktop editor mostly shares the mobile application's separation of responsibilities into manager classes and MonoBehaviour services, also inheriting its primarily event-driven design to avoid unnecessary interdependencies between components. As in the mobile solution, prefabs for the player, ambient and spatial sound sources are stored in scriptable objects. However, unlike the mobile version, these prefab elements are merely visual in development mode. Information regarding a placed element is mapped to the grid cell it resides in, rather than being tied to the game object itself, making it so that the grid is fully responsible for storing the content of its elements and providing it to other parts of the system.
 
 The editor's \gls{UI} was developed in its entirety with Unity's \gls{UI} Toolkit, from the buttons to the popup windows, including the various \gls{UI} elements housed within them. Exceptionally, the background texture consists of a sprite in a Canvas game object so that it remains behind all other \gls{UI} elements built with \gls{UI} Toolkit. Assets are sourced from \gls{CC0}-licensed repositories: UXWing for icons and free-images.com\footnote{\url{https://free-images.com/}} for the background texture image.
 
-In development mode, the editor capitalizes on Unity's built-in grid component as the structural foundation for its grid-based placement system. Its implementation draws heavily from an online grid system video course\footnote{\url{https://www.youtube.com/playlist?list=PLcRSafycjWFepsLiAHxxi8D_5GGvu6arf}}, adapting from this tutorial a custom shader for visualization of the grid and also the application of the State pattern to handle the grid's behavior in different modes: placement, edit and removal. Employing this design pattern, the logic for each mode is fully encapsulated in a dedicated class exposing its own implementation of required state actions. The placement system holds only a reference to a general state object, whose internal state changes and delegates responsibilities accordingly, triggering the appropriate actions.
+In development mode, the editor capitalizes on Unity's built-in grid component as the structural foundation for its grid-based placement system. Its implementation draws heavily from an online grid system video course\footnote{\url{https://www.youtube.com/playlist?list=PLcRSafycjWFepsLiAHxxi8D_5GGvu6arf}}, adapting from this tutorial a custom shader for visualization of the grid and also the application of the State pattern to handle the grid's behavior in different modes: placement, edit and removal. Employing this design pattern, the logic for each mode is fully encapsulated in a dedicated class exposing its own implementation of required state actions. Visualizable in figure~\ref{fig:desktop-editor-state-pattern}, the placement system holds only a reference to a general state object, whose internal state changes and delegates responsibilities accordingly, triggering the appropriate actions.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{state-pattern}
+  \caption{State pattern incorporation within the application.}
+  \label{fig:desktop-editor-state-pattern}
+\end{figure}
 
 Since the very purpose of the editor's Interactive mode is to emulate the soundscape as it would be presented in the mobile application, it repurposes essentially all of the mobile player's core logic, sharing nearly all of its assets, including media resources, prefabs and scripts. Where the editor's Interactive mode differs from the mobile version is in input control, as it uses toggleable buttons for interacting with the auditory environment instead of touch gestures or gamepad controls. It also does not feature haptic feedback, since it does not support a touch interface.
 
-To transfer data between Development mode and Interactive mode, implemented as separate Unity scenes, scene information of the devised environment in Development mode is locally persisted as a JSON file in Unity's persistent data path. When Interactive mode is enabled, this file is parsed and translated into a fully functional preview of the soundscape. When the editor is switched to interactive mode, this file is parsed and transformed into a functional preview of the soundscape. As mentioned in section~\ref{sec:system-limitations}, the current editor prototype is explicitly programmed to delete the file upon closing, effectively acting as a one-shot creative environment that leaves no residual files. This decision was made in light of the possibility that some user study participants would undertake the system evaluation remotely, using the application on their desktops.
+To transfer data between Development mode and Interactive mode, implemented as separate Unity scenes, scene information of the devised environment in Development mode is locally persisted as a JSON file in Unity's persistent data path. The structure of the persisted information is defined in the \textit{SceneData} class, which is exposed in figure~\ref{fig:desktop-editor-scene-data}. When Interactive mode is enabled, this file is parsed and translated into a fully functional preview of the soundscape. So that the audio files, as the heaviest media resources to be loaded into Interactive mode, do not bottleneck the application and significantly delay loading the remaining scene information, these are cached in parallel into a dictionary. Listing~\ref{lst:scene-data-loader} exposes the implementation of the method which loads and sets the information pertaining to a devised scene into Interactive mode, as well as the ancillary function for asynchronously caching the existing audio files.As mentioned in section~\ref{sec:system-limitations}, the current editor prototype is explicitly programmed to delete the file upon closing, effectively acting as a one-shot creative environment that leaves no residual files. This decision was made in light of the possibility that some user study participants would undertake the system evaluation remotely, using the application on their desktops.
+\begin{lstlisting}[style=csharp, caption={Methods for loading scene information into Interactive mode and asynchronous audio caching in C\#.}, label={lst:scene-data-loader}]
+public async Task LoadSceneData()
+{
+	// Load the generated scene's data
+	SceneData sceneData = SaveSystem.LoadSceneData();
+	// Set cell size based on scene data
+	_cellSize = sceneData.cellSize;
+	// Set background image
+	BackgroundImageController.Instance.SetBackgroundImage(sceneData.pathToBackgroundImage);
+	// Spawn player first, to give time to load audio listener and camera controller
+	await PlaceWorldPlayerObject(sceneData);
+	// Load all audio files asynchronously and await for completion
+	await LoadAllAudioFiles(sceneData);
+	// Set global narration
+	LoadGlobalNarration(sceneData);
+	// Place ambient and spatial sound objects
+	PlaceWorldSoundObjects(sceneData);
+}
+	
+private async Task LoadAllAudioFiles(SceneData sceneData)
+{
+	// Get all unique audio file paths from the scene data
+	HashSet<string> audioFilePaths = GetAllAudioFilePaths(sceneData);
+	// Use a dictionary to map file paths to loading tasks
+	Dictionary<string, Task<AudioClip>> loadingTasks = audioFilePaths
+		.ToDictionary(path => path, AudioLoaderAsync.LoadClip);
+	// Await all loading tasks to complete in parallel
+	await Task.WhenAll(loadingTasks.Values);
+	// Populate the audio clips cache with the loaded clips
+	foreach (var kvp in loadingTasks)
+	{
+		AudioClip clip = await kvp.Value;
+		_audioClipsCache[kvp.Key] = clip;
+	}
+}
+\end{lstlisting}
+\label{lst:scene-data-loader}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\linewidth]{scene-data}
+  \caption{\textit{SceneData} class holds the soundscape information passed between the application's two modes: Development and Interactive.}
+  \label{fig:desktop-editor-scene-data}
+\end{figure}
 
 As outlined in section~\ref{sec:technological-stack}, file system interactions in the editor, such as selecting the painting or audio files from a local desktop directory via a file dialog, were incorporated into the application using the UnityStandaloneFileBrowser.

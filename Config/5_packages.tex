@@ -48,6 +48,28 @@
 
 \usepackage{pdfpages}
 
+\usepackage{listings}
+\usepackage{xcolor} % Optional, for syntax highlighting
+
+\lstdefinestyle{csharp}{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  frame=single,
+  tabsize=2, % Set tab size to 2 (this reduces indentation of each tab)
+  xleftmargin=0pt, % Remove the left margin
+  xrightmargin=0pt, % Remove the right margin
+  lineskip=0pt, % Adjust space between lines
+}
+
+
+
 % \usepackage{indentfirst}       % Indent first list after a (sub)section title
 
 % \usepackage{algorithm2e}
